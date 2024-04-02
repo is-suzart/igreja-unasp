@@ -48,6 +48,16 @@ const config: Config = {
       },
     },
     },
-  plugins: []
+  plugins: [],
+  safelist: [
+    'text-perigo', 'text-perigo-hover', 'bg-perigo', 'bg-perigo-hover', 'border-perigo', 'border-perigo-hover',
+    'text-sucesso', 'text-sucesso-hover', 'bg-sucesso', 'bg-sucesso-hover', 'border-sucesso', 'border-sucesso-hover',
+    'text-aviso', 'text-aviso-hover', 'bg-aviso', 'bg-aviso-hover', 'border-aviso', 'border-aviso-hover',
+    'text-link', 'text-link-hover', 'bg-link', 'bg-link-hover', 'border-link', 'border-link-hover',
+    'text-escuro', 'text-escuro-hover', 'bg-escuro', 'bg-escuro-hover', 'border-escuro', 'border-escuro-hover',
+    'text-claro', 'text-claro-hover', 'bg-claro', 'bg-claro-hover', 'border-claro', 'border-claro-hover',
+    
+    
+  ]
 };
 export default config;
