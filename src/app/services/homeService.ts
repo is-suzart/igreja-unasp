@@ -1,6 +1,6 @@
 import axios from 'axios'
-
-const urlApi = 'http://api-unasp.test/wp-json/wp/v2/'
+import { HomePageModel } from '../models/homeModels'
+const urlApi = 'https://igrejaunasp.com/api/wp-json/wp/v2/'
 
 // interface seoModel {
 //     title: string;
@@ -14,16 +14,6 @@ const urlApi = 'http://api-unasp.test/wp-json/wp/v2/'
 //     }
 // }
 
-interface HomePageModel {
-    id: number;
-    title: string;
-    front: {
-        site_banner: any[],
-        sections: any[],
-        encontros: any[],
-    }
-    seo: any;
-}
 
 export async function getHomePage(){
    const res:any = await axios({
@@ -43,6 +33,22 @@ export async function getHomePage(){
             "encontros": data[0].acf.encontros
         },
         seo: data[0].yoast_head_json
+    }
+    return result
+}
+export async function getUnaspHeader(){
+    const res:any = await axios({
+        method: 'get',
+        url: `${urlApi}layout`,
+        params: {
+            title: 'header'
+        }
+    })
+    const data = res.data
+    const result: any = {
+        id: data[0].id,
+        title: data[0].title.rendered,
+        front: data[0].acf,
     }
     return result
 }
