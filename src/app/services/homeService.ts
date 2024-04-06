@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { HomePageModel } from '../models/homeModels'
+import { HeaderModel } from '../models/layoutModels'
 const urlApi = 'https://igrejaunasp.com/api/wp-json/wp/v2/'
 
 // interface seoModel {
@@ -45,10 +46,12 @@ export async function getUnaspHeader(){
         }
     })
     const data = res.data
-    const result: any = {
+    const result: HeaderModel = {
         id: data[0].id,
         title: data[0].title.rendered,
-        front: data[0].acf,
+        logo: data[0].acf.header_unasp.logo_unasp,
+        menus: data[0].acf.header_unasp.menus,
+        social: data[0].acf.header_unasp.social_media
     }
     return result
 }

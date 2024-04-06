@@ -1,21 +1,24 @@
 import { FunctionComponent } from "react";
 import { getUnaspHeader } from "../services/homeService";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { MenuModel } from "../models/layoutModels";
+import Link from "next/link";
 
 
-export const Header: FunctionComponent<any> = async () => {
+export async function Header () {
     const header = await getUnaspHeader()
-    const menus = header.front.header_unasp.menus
-    const social = header.front.header_unasp.social_media
+    
+    // const menus = header.menus
+    // const social = header.social
     return (
-        <header className="flex bg-perigo-light justify-between items-center w-full h-16 px-8">
-            <img className="h-8" src={header.front.header_unasp.logo_unasp} alt="Logo Unasp" />
-            <div className="flex">
+        <header className="columns-3 bg-escuro-hover w-full py-4 px-8">
+            <img className="h-8" src={header.logo} alt="Logo Unasp" />
+            <div className="w-full flex justify-center">
                 {
-                    menus.map((x:any,i:number) => {
+                    header.menus.map((x:any,i:number) => {
                         return (
                             <ul className="mx-4">
-                            <a className="py-2 text-xs px-4 block rounded-full border-2 border-black" href={x.menu_link}><li>{x.menu_name}</li></a>
+                            <MenuItem menu_link={x.menu_link} menu_name={x.menu_name} />
                         </ul>
                         )
 
@@ -25,7 +28,7 @@ export const Header: FunctionComponent<any> = async () => {
             </div>
             <div className="flex">
                 {
-                    social.map((x:any,i:number) => {
+                    header.social.map((x:any,i:number) => {
                         return (
                             <div className="rounded-full size-6">
                                 <i className={x.social_icon.class} aria-hidden="true"></i>
@@ -35,5 +38,11 @@ export const Header: FunctionComponent<any> = async () => {
                 }
             </div>
         </header>
+    )
+}
+
+export function MenuItem ({menu_link,menu_name}:MenuModel) {
+    return (
+        <Link className="py-2 text-xs px-4 block rounded-full border boder-white text-white hover:border-white-700 hover:text-white-700" href={menu_link.toLowerCase()}><li>{menu_name}</li></Link>
     )
 }

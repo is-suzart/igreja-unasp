@@ -1,4 +1,3 @@
-import React, { FunctionComponent } from 'react';
 
 interface ButtonProps {
   text: string;
@@ -9,18 +8,18 @@ interface ButtonProps {
   icon?:any;
 }
 
-export const Button: FunctionComponent<ButtonProps> = ({ text, link, outline, type, hasIcon, icon }) => {
+export default function Button({ text, link, outline, type, hasIcon, icon }: ButtonProps) {
     function btnClasses(): string {
         return outline ? `custom-btn border-${type.toLowerCase()} hover:border-${type.toLowerCase()}-hover text-${type.toLowerCase()} hover:text-${type.toLowerCase()}-hover`
-        : `custom-btn border-transparent bg-${type.toLowerCase()} hover:bg-${type.toLowerCase()}-hover text-white`
+        : `custom-btn border-transparent bg-${type.toLowerCase()} hover:bg-${type.toLowerCase()}-hover text-white`;
     }
+
     return (
         link !== '' ?
         <a href={link}>
-         <button className={btnClasses()}>{text}</button>
+            <button className={btnClasses()}>{text}</button>
         </a> 
         : <button className={btnClasses()}>{text}</button>
-    )
-
+    );
 }
 
