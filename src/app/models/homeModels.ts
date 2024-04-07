@@ -1,9 +1,9 @@
 export interface HomePageModel {
     id: number;
     title: string;
-    banner: BannerModel[];
-    sections: SectionModel[];
-    encontros: EncounterModel[];
+    banner: any;
+    sections: any;
+    encontros: any;
     seo?: any;
 }
 
@@ -12,19 +12,7 @@ export interface BannerModel {
     title: string;
     image: string;
     link: string;
-    header: HeaderContentModel;
-}
-export interface SectionModel {
-    id: number;
-    title: string;
-    image: string;
-    link: string;
-}
-export interface EncounterModel {
-    id: number;
-    title: string;
-    image: string;
-    link: string;
+    header: any;
 }
 export interface HeaderContentModel{
     header_subtitle: {
@@ -44,3 +32,16 @@ export interface ButtonModel{
     btn_has_icon: boolean,
     btn_icon: any 
 }
+export interface SectionModel {
+    id: number;
+    title: string;
+    image: string;
+    link: string;
+}
+export interface EncounterModel {
+    id: number;
+    title: string;
+    image: string;
+    link: string;
+}
+

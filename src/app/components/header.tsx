@@ -11,7 +11,7 @@ export async function Header () {
     // const menus = header.menus
     // const social = header.social
     return (
-        <header className="columns-3 bg-escuro-hover w-full py-4 px-8">
+        <header className="columns-3 absolute top-0 z-10 w-full py-4 px-8">
             <img className="h-8" src={header.logo} alt="Logo Unasp" />
             <div className="w-full flex justify-center">
                 {
