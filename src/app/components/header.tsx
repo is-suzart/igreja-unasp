@@ -43,6 +43,6 @@ export async function Header () {
 
 export function MenuItem ({menu_link,menu_name}:MenuModel) {
     return (
-        <Link className="py-2 text-xs px-4 block rounded-full border boder-white text-white hover:border-white-700 hover:text-white-700" href={menu_link.toLowerCase()}><li>{menu_name}</li></Link>
+        <Link className="py-2 text-xs px-4 block rounded-full border border-slate-50 text-slate-50 hover:border-slate-300 hover:text-slate-300" href={menu_link.toLowerCase()}><li>{menu_name}</li></Link>
     )
 }

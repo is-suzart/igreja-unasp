@@ -40,7 +40,7 @@ const config: Config = {
           light: '#444444',
         },
         claro: {
-          DEFAULT: '#f2f2f2',
+          DEFAULT: '#ffffff',
           hover: '#f4f4f4',
           light: '#fff'
         }
