@@ -1,7 +1,7 @@
 export interface HomePageModel {
     id: number;
     title: string;
-    banner: any;
+    banner: BannerModel[];
     sections: any;
     encontros: any;
     seo?: any;
