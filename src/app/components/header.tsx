@@ -1,7 +1,7 @@
 import { FunctionComponent } from "react";
 import { getUnaspHeader } from "../services/homeService";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { MenuModel } from "../models/layoutModels";
+import { MenuModel, SocialModel } from "../models/layoutModels";
 import Link from "next/link";
 
 
@@ -12,13 +12,16 @@ export async function Header () {
     // const social = header.social
     return (
         <header className="columns-3 absolute top-0 z-10 w-full py-4 px-8">
-            <img className="h-8" src={header.logo} alt="Logo Unasp" />
+            <Link href="/">
+                <img className="h-8" src={header.logo} alt="Logo Unasp" />
+            </Link>
+            
             <div className="w-full flex justify-center">
                 {
-                    header.menus.map((x:any,i:number) => {
+                    header.menus.map((x:MenuModel,i:number) => {
                         return (
                             <ul className="mx-4">
-                            <MenuItem menu_link={x.menu_link} menu_name={x.menu_name} />
+                            <MenuItem link={x.link} name={x.name} />
                         </ul>
                         )
 
@@ -31,7 +34,7 @@ export async function Header () {
                     header.social.map((x:any,i:number) => {
                         return (
                             <div className="rounded-full size-6">
-                                <i className={x.social_icon.class} aria-hidden="true"></i>
+                                <i className={x.icon.class} aria-hidden="true"></i>
                             </div>
                         )
                     })
@@ -41,8 +44,8 @@ export async function Header () {
     )
 }
 
-export function MenuItem ({menu_link,menu_name}:MenuModel) {
+export function MenuItem ({link,name}:MenuModel) {
     return (
-        <Link className="py-2 text-xs px-4 block rounded-full border border-slate-50 text-slate-50 hover:border-slate-300 hover:text-slate-300" href={menu_link.toLowerCase()}><li>{menu_name}</li></Link>
+        <Link className="py-2 text-xs px-4 block rounded-full border border-slate-50 text-slate-50 hover:border-slate-300 hover:bg-slate-300 hover:text-slate-700 hover:font-semibold" href={link.toLowerCase()}><li>{name}</li></Link>
     )
 }

@@ -6,15 +6,15 @@ export interface HeaderModel {
     social: SocialModel[]
 }
 export interface MenuModel {
-    menu_name: string;
-    menu_link: string;
+    name: string;
+    link: string;
 }
-interface SocialModel{
-    social_icon: FaIconModel;
-    social_link: string;
-    social_name: string;
+export interface SocialModel{
+    icon: FaIconModel;
+    link: string;
+    name: string;
 }
-interface FaIconModel {
+export interface FaIconModel {
     element: string;
     class: string;
     id: string;
@@ -22,4 +22,13 @@ interface FaIconModel {
     style: string;
     hex: string;
     unicode: string;
+}
+
+export interface ButtonModel{
+    text: string,
+    link: string,
+    outline: boolean,
+    color: string,
+    hasIcon: boolean,
+    icon: FaIconModel 
 }

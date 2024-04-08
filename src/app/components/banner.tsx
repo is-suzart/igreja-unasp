@@ -1,17 +1,36 @@
 "use client"
-import { CSSProperties } from 'react';
+import { useState, useEffect } from 'react';
 import { getPage } from '../services/homeService';
-export default async function Banner (){
-    const bannerData = await getPage('Home')
-    console.log(bannerData)
-    const divStyle: CSSProperties = {
-        'backgroundImage': `url("https://igrejaunasp.com/api/wp-content/uploads/2024/04/x540e5b7c9ecc14c71892b05825344a84.png.pagespeed.ic_.eY0acaNsks.webp")`,
-        'backgroundPosition': 'center',
-        'backgroundSize': 'cover'
-    }
-    return(
-      <div className="w-full h-screen absolute top-0 bg-red-500 pt-14" style={divStyle}>
-        <p>oi</p>
-      </div>
-    )
-  }
+import { PageModel } from '../models/pageModels';
+
+const Banner = () => {
+  const [bannerData, setBannerData] = useState<PageModel | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await getPage('index');
+        setBannerData(data);
+        console.log(data);
+      } catch (error) {
+        console.error('Erro ao buscar dados:', error);
+      }
+    };
+
+    fetchData();
+  }, []); // Executa somente uma vez no carregamento inicial
+
+  const divStyle = {
+    'backgroundImage': `url("${bannerData?.banner[0]?.bg}")`,
+    'backgroundPosition': 'center',
+    'backgroundSize': 'cover',
+  };
+
+  return (
+    <div className="w-full h-screen absolute top- bg-gray-900 pt-14 text-white" style={divStyle}>
+      <p>oi</p>
+    </div>
+  );
+};
+
+export default Banner;
