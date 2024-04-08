@@ -7,9 +7,6 @@ import Link from "next/link";
 
 export async function Header () {
     const header = await getUnaspHeader()
-    
-    // const menus = header.menus
-    // const social = header.social
     return (
         <header className="columns-3 absolute top-0 z-10 w-full py-4 px-8">
             <Link href="/">
@@ -20,7 +17,7 @@ export async function Header () {
                 {
                     header.menus.map((x:MenuModel,i:number) => {
                         return (
-                            <ul className="mx-4">
+                            <ul key={x.name} className="mx-4">
                             <MenuItem link={x.link} name={x.name} />
                         </ul>
                         )
@@ -31,9 +28,9 @@ export async function Header () {
             </div>
             <div className="flex">
                 {
-                    header.social.map((x:any,i:number) => {
+                    header.social.map((x:SocialModel,i:number) => {
                         return (
-                            <div className="rounded-full size-6">
+                            <div className="rounded-full size-6" key={x.name}>
                                 <i className={x.icon.class} aria-hidden="true"></i>
                             </div>
                         )
