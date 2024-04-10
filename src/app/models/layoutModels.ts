@@ -28,7 +28,8 @@ export interface ButtonModel{
     text: string,
     link: string,
     outline: boolean,
-    color: string,
+    color: 'perigo' | 'sucesso' | 'aviso' | 'link' | 'escuro' | 'claro',
     hasIcon: boolean,
-    icon: FaIconModel 
+    icon?: FaIconModel,
+    isFullSize?: boolean
 }

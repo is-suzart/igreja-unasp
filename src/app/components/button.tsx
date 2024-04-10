@@ -1,4 +1,6 @@
 import classnames  from  'classnames'
+import { FaIcon } from '../helpers/fontAwesomeHelper';
+import { ButtonModel } from '../models/layoutModels';
 interface ButtonProps {
   text: string;
   link: string;
@@ -9,7 +11,7 @@ interface ButtonProps {
   isFullSize?: boolean;
 }
 
-export default function Button({ text, link, outline, type, hasIcon, icon, isFullSize }: ButtonProps) {
+export default function Button({ text, link, outline, color, hasIcon, icon, isFullSize }: ButtonModel) {
     function btnClasses(): string {
         const baseClasses = {
           'custom-btn': true,
@@ -18,13 +20,13 @@ export default function Button({ text, link, outline, type, hasIcon, icon, isFul
           'ease-in-out': true,
           'border-transparent': !outline,
           'text-white': !outline,
-          [`hover:bg-${type.toLowerCase()}`]: outline,
-          [`border-${type.toLowerCase()}`]: outline,
-          [`text-${type.toLowerCase()}`]: outline,
-          [`hover:text-white`]: outline && type !== 'claro' && type !== 'aviso',
-          [`hover:text-slate-900`]: outline && (type == 'claro' || type == 'aviso'),
-          [`bg-${type.toLowerCase()}`]: !outline,
-          [`hover:bg-${type.toLowerCase()}-hover`]: !outline,
+          [`hover:bg-${color.toLowerCase()}`]: outline,
+          [`border-${color.toLowerCase()}`]: outline,
+          [`text-${color.toLowerCase()}`]: outline,
+          [`hover:text-white`]: outline && color.toLocaleLowerCase() !== 'claro' && color.toLocaleLowerCase() !== 'aviso',
+          [`hover:text-slate-900`]: outline && (color.toLocaleLowerCase() == 'claro' || color.toLocaleLowerCase() == 'aviso'),
+          [`bg-${color.toLowerCase()}`]: !outline,
+          [`hover:bg-${color.toLowerCase()}-hover`]: !outline,
           [`w-full`]: isFullSize
         };
       
@@ -32,11 +34,20 @@ export default function Button({ text, link, outline, type, hasIcon, icon, isFul
       }
 
     return (
-        link !== '' ?
-        <a href={link}>
-            <button className={btnClasses()}>{text}</button>
+        <a href={link !== "" ? link : undefined}>
+            <button className={btnClasses()}>
+          {hasIcon ? 
+            <span className='flex items-center' >
+              <span className=' w-4'>
+                <FaIcon faClass={icon!.class} /> 
+              </span>
+              
+              <span className="ml-2">{text}</span> 
+            </span>  : 
+            text}
+          </button>
         </a> 
-        : <button className={btnClasses()}>{text}</button>
+        
     );
 }
 

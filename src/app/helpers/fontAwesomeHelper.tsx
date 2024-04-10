@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 library.add(fas, far, fab);
 
-export function FaIcon({faClass,size}:{faClass:string,size:SizeProp}) {
+export function FaIcon({faClass,}:{faClass:string}) {
     function convertToFa(){
         let transformClass = faClass.split(" ")
         let finalClass: any = []
@@ -17,7 +17,7 @@ export function FaIcon({faClass,size}:{faClass:string,size:SizeProp}) {
         return finalClass
     }
     return (
-        <FontAwesomeIcon size={size} icon={convertToFa()} />
+        <FontAwesomeIcon size='sm' icon={convertToFa()} />
     );
 
 

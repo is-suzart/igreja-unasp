@@ -1,7 +1,8 @@
 import { getPage } from "../services/homeService";
-import { PageModel } from "../models/pageModels";
+import { BannerModel, PageModel } from "../models/pageModels";
 import { Crimson_Pro } from "next/font/google";
 import Button from "./button";
+import { ButtonModel } from "../models/layoutModels";
 
 const serif = Crimson_Pro({
   weight: ["400", "700"],
@@ -9,11 +10,11 @@ const serif = Crimson_Pro({
   display: "swap",
 });
 
-export async function Banner() {
-  const bannerData = await getPage("index");
+export async function Banner({bannerData}: {bannerData: BannerModel[]}) {
+  //const bannerData = await getPage("index");
 
   const divStyle = {
-    backgroundImage: `url("${bannerData?.banner[0]?.bg}")`,
+    backgroundImage: `url("${bannerData[0].bg}")`,
     backgroundPosition: "center",
     backgroundSize: "cover",
   };
@@ -26,23 +27,35 @@ export async function Banner() {
         <div className=" ">
           <h5
             className={`${serif.className
-              } text-3xl text-${bannerData?.banner[0].subtitle.color.toLocaleLowerCase()} font-bold`}>
-            {bannerData?.banner[0].subtitle.text}
+              } text-3xl text-${bannerData[0].subtitle.color.toLocaleLowerCase()} font-bold`}>
+            {bannerData[0].subtitle.text}
           </h5>
           <h1 className=" font-black text-5xl">
-            {bannerData?.banner[0].title}
+            {bannerData[0].title}
           </h1>
-          <p className=" text-sm mt-4 mb-4 font-normal">
-            {bannerData?.banner[0].text}
+          <p className=" text-sm mt-4 font-normal">
+            {bannerData[0].text}
           </p>
-          <Button
-            text="Explore"
-            link="/"
-            outline={true}
-            type="claro"
-            hasIcon={false}
-            isFullSize={true}
-          />
+            <div className="mt-8">
+              {
+                bannerData[0].btns.map((item:ButtonModel, index:number) => {
+                  return (
+                    <div className="mb-4" key={index}>
+                      <Button
+                        text={item.text}
+                        color={item.color}
+                        link={item.link}
+                        outline={item.hasIcon}
+                        hasIcon={item.hasIcon}
+                        icon={item.icon ? item.icon : undefined}
+                        isFullSize={true}
+                      />
+                    </div>
+  
+                  )
+                })
+              }
+            </div>
         </div>
       </div>
     </div>
