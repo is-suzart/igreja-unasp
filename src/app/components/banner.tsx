@@ -21,9 +21,9 @@ export async function Banner({bannerData}: {bannerData: BannerModel[]}) {
 
   return (
     <div
-      className="w-full h-screen absolute top- bg-gray-900 pt-14 text-white p-20"
+      className="w-full h-screen absolute top- bg-gray-900  text-white py-20 px-10 md:pb-0 md:pt-14 md:p-20"
       style={divStyle}>
-      <div className="grid grid-cols-3 h-full items-center">
+      <div className=" md:grid md:grid-cols-3 h-full md:items-center">
         <div className=" ">
           <h5
             className={`${serif.className
@@ -33,10 +33,10 @@ export async function Banner({bannerData}: {bannerData: BannerModel[]}) {
           <h1 className=" font-black text-5xl">
             {bannerData[0].title}
           </h1>
-          <p className=" text-sm mt-4 font-normal">
+          <p className=" text-xs md:text-sm mt-4 font-normal">
             {bannerData[0].text}
           </p>
-            <div className="mt-8">
+          <div className="mt-8">
               {
                 bannerData[0].btns.map((item:ButtonModel, index:number) => {
                   return (
@@ -57,6 +57,7 @@ export async function Banner({bannerData}: {bannerData: BannerModel[]}) {
               }
             </div>
         </div>
+
       </div>
     </div>
   );

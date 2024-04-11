@@ -8,15 +8,19 @@ import { FaIcon } from "../helpers/fontAwesomeHelper";
 export async function Header() {
     const header = await getUnaspHeader();
     return (
-        <header className="grid grid-cols-12 absolute top-0 z-10 w-full py-4 px-8">
-            <div className="col-span-3">
+        <header className="md:grid md:grid-cols-12 absolute top-0 z-10 w-full py-4 px-8">
+            <div className="flex w-full items-center md:block md:col-span-3">
+                <div className="block md:hidden mr-8 text-slate-50 size-4">
+                    <FaIcon faClass="fa-solid fa-bars" />
+                </div>
+                
                 <Link href="/">
-                    <img className=" h-8" src={header.logo} alt="Logo Unasp" />
+                    <img className="h5 md:h-8" src={header.logo} alt="Logo Unasp" />
                 </Link>
             </div>
 
 
-            <div className="col-span-6 w-full flex justify-center">
+            <div className="hidden md:flex col-span-6 w-full justify-center">
                 {header.menus.map((x: MenuModel, i: number) => {
                     return (
                         <ul key={x.name} className="mx-4">
@@ -25,7 +29,7 @@ export async function Header() {
                     );
                 })}
             </div>
-            <div className="col-span-3 flex justify-end">
+            <div className="hidden col-span-3 md:flex justify-end">
                 {header.social.map((x: SocialModel, i: number) => {
                     return (
                         <div key={x.name}>
