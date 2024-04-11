@@ -1,14 +1,9 @@
 import { getPage } from "../services/homeService";
 import { BannerModel, PageModel } from "../models/pageModels";
-import { Crimson_Pro } from "next/font/google";
 import Button from "./button";
 import { ButtonModel } from "../models/layoutModels";
+import { serifClass } from "../helpers/serifHelper";
 
-const serif = Crimson_Pro({
-  weight: ["400", "700"],
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export async function Banner({bannerData}: {bannerData: BannerModel[]}) {
   //const bannerData = await getPage("index");
@@ -26,7 +21,7 @@ export async function Banner({bannerData}: {bannerData: BannerModel[]}) {
       <div className=" md:grid md:grid-cols-3 h-full md:items-center">
         <div className=" ">
           <h5
-            className={`${serif.className
+            className={`${serifClass
               } text-3xl text-${bannerData[0].subtitle.color.toLocaleLowerCase()} font-bold`}>
             {bannerData[0].subtitle.text}
           </h5>
