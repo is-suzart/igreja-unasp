@@ -16,7 +16,7 @@ export async function Banner({bannerData}: {bannerData: BannerModel[]}) {
 
   return (
     <div
-      className="w-full h-screen absolute top- bg-gray-900  text-white py-20 px-10 md:pb-0 md:pt-14 md:p-20"
+      className="w-full h-screen relative top- bg-gray-900  text-white py-20 px-10 md:pb-0 md:pt-14 md:p-20"
       style={divStyle}>
       <div className=" md:grid md:grid-cols-3 h-full md:items-center">
         <div className=" ">

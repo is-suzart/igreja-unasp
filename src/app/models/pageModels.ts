@@ -5,7 +5,7 @@ export interface PageModel {
     title: string;
     banner: BannerModel[];
     sections: any;
-    encontros: any;
+    encontros: EncounterModel[];
     seo?: any;
 }
 export interface BannerModel{

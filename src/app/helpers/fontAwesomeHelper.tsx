@@ -17,7 +17,7 @@ export function FaIcon({faClass,}:{faClass:string}) {
         return finalClass
     }
     return (
-        <FontAwesomeIcon size='sm' icon={convertToFa()} />
+        <FontAwesomeIcon size='xs' icon={convertToFa()} />
     );
 
 

@@ -1,27 +1,42 @@
-import { FunctionComponent } from "react";
-import { getUnaspHeader } from "../services/homeService";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { MenuModel, SocialModel } from "../models/layoutModels";
+"use client"
+import { HeaderModel, MenuModel, SocialModel } from "../models/layoutModels";
 import Link from "next/link";
 import { FaIcon } from "../helpers/fontAwesomeHelper";
+import { useEffect } from "react";
 
-export async function Header() {
-    const header = await getUnaspHeader();
+
+export function Header({data}: {data: HeaderModel}) {
+    useEffect(() => {
+        function handleScroll() {
+            const header = document.getElementById('main-header')
+            if (header && window.scrollY > 80) {
+                header.classList.add('has-scroll')
+            } else {
+                header?.classList.remove('has-scroll')
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+    },[])
     return (
-        <header className="md:grid md:grid-cols-12 absolute top-0 z-10 w-full py-4 px-8">
+        <header id="main-header" className="md:grid md:grid-cols-12 absolute top-0 z-10 w-full py-4 px-8">
             <div className="flex w-full items-center md:block md:col-span-3">
                 <div className="block md:hidden mr-8 text-slate-50 size-4">
                     <FaIcon faClass="fa-solid fa-bars" />
                 </div>
                 
                 <Link href="/">
-                    <img className="h5 md:h-8" src={header.logo} alt="Logo Unasp" />
+                    <img className="h5 md:h-8" src={data.logo} alt="Logo Unasp" />
                 </Link>
             </div>
 
 
             <div className="hidden md:flex col-span-6 w-full justify-center">
-                {header.menus.map((x: MenuModel, i: number) => {
+                {data.menus.map((x: MenuModel, i: number) => {
                     return (
                         <ul key={x.name} className="mx-4">
                             <MenuItem link={x.link} name={x.name} />
@@ -30,7 +45,7 @@ export async function Header() {
                 })}
             </div>
             <div className="hidden col-span-3 md:flex justify-end">
-                {header.social.map((x: SocialModel, i: number) => {
+                {data.social.map((x: SocialModel, i: number) => {
                     return (
                         <div key={x.name}>
                             {x.link != "" ? (
@@ -39,7 +54,7 @@ export async function Header() {
                                         className="rounded-full flex justify-center items-center mx-2 border-slate-50 border p-2 hover:bg-slate-300 hover:border-slate-300  text-slate-50 hover:text-slate-900"
                                         key={x.name}
                                     >
-                                        <div className="size-3">
+                                        <div className="size-3 flex justify-center items-center">
                                             <FaIcon faClass={x.icon.class}  />
                                         </div>
                                     </div>
@@ -49,7 +64,7 @@ export async function Header() {
                                     className="rounded-full flex justify-center items-center mx-2 border-slate-50 border p-2 hover:bg-slate-300 hover:border-slate-300  text-slate-50 hover:text-slate-900"
                                     key={x.name}
                                 >
-                                    <div className="size-3">
+                                    <div className="text-sm">
                                         <FaIcon faClass={x.icon.class}  />
                                     </div>
                                 </div>

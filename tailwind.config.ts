@@ -8,6 +8,17 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      width: {
+        '100%': '100%',
+        '200%': '200%',
+        '300%': '300%',
+        '400%': '400%',
+        '500%': '500%',
+        '600%': '600%',
+        '700%': '700%',
+        '800%': '800%',
+        '900%': '900%',
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -56,6 +67,8 @@ const config: Config = {
     'text-link', 'text-link-hover', 'hover:text-link-hover', 'hover:bg-link-hover', 'hover:bg-link', 'hover:border-link-hover', 'bg-link', 'bg-link-hover', 'border-link', 'border-link-hover',
     'text-escuro', 'text-escuro-hover', 'hover:text-escuro-hover', 'hover:bg-escuro-hover', 'hover:bg-escuro', 'hover:border-escuro-hover', 'bg-escuro', 'bg-escuro-hover', 'border-escuro', 'border-escuro-hover',
     'text-claro', 'text-claro-hover', 'hover:text-claro-hover', 'hover:bg-claro-hover', 'hover:bg-claro', 'hover:border-claro-hover', 'bg-claro', 'bg-claro-hover', 'border-claro', 'border-claro-hover',
+    'grid-cols-1', 'grid-cols-2', 'grid-cols-3', 'grid-cols-4', 'grid-cols-5', 'grid-cols-6', 'grid-cols-7', 'grid-cols-8', 'grid-cols-9',
+    'w-100%','w-200%','w-300%','w-400%','w-500%','w-600%','w-700%','w-800%','w-900%'
     
     
   ]

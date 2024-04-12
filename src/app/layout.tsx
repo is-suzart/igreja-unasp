@@ -3,9 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import {Header} from "./components/header";
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { fas } from "@fortawesome/free-solid-svg-icons";
-
-library.add(fas)
+import { getUnaspHeader } from "./services/homeService";
 
 const poppins = Poppins({weight: ['100','200','300','400','500','600','700','800','900'],subsets: ['latin-ext']} );
 
@@ -19,10 +17,11 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const header = await getUnaspHeader()
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <Header />
+        <Header data={header} />
         {children}
         </body>
     </html>

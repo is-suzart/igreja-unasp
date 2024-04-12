@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Button from "./components/button";
 import {Banner} from "./components/banner";
+import { Encontros } from "./partials/encontros";
 import { getPage } from "./services/homeService";
+
 
 
 export default async function Home() {
@@ -9,6 +11,7 @@ export default async function Home() {
   return (
     <main className="">
       <Banner bannerData={homePage.banner} />
+      <Encontros encontros={homePage.encontros} />
     </main>
   );
 }
