@@ -26,7 +26,7 @@ export function Header({data}: {data: HeaderModel}) {
         <header id="main-header" className="md:grid md:grid-cols-12 absolute top-0 z-10 w-full py-4 px-8">
             <div className="flex w-full items-center md:block md:col-span-3">
                 <div className="block md:hidden mr-8 text-slate-50 size-4">
-                    <FaIcon faClass="fa-solid fa-bars" />
+                    <FaIcon faClass="fa-solid fa-bars" size="sm" />
                 </div>
                 
                 <Link href="/">
@@ -55,7 +55,7 @@ export function Header({data}: {data: HeaderModel}) {
                                         key={x.name}
                                     >
                                         <div className="size-3 flex justify-center items-center">
-                                            <FaIcon faClass={x.icon.class}  />
+                                            <FaIcon faClass={x.icon.class} size="xs"  />
                                         </div>
                                     </div>
                                 </Link>
@@ -65,7 +65,7 @@ export function Header({data}: {data: HeaderModel}) {
                                     key={x.name}
                                 >
                                     <div className="text-sm">
-                                        <FaIcon faClass={x.icon.class}  />
+                                        <FaIcon size="xs" faClass={x.icon.class}  />
                                     </div>
                                 </div>
                             )}
