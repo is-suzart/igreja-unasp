@@ -37,3 +37,9 @@
 .has-scroll {
   @apply bg-slate-900 fixed py-2 !important;
 }
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
