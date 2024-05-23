@@ -1,4 +1,4 @@
-import { EncounterModel } from "../models/pageModels";
+import { EncounterModel } from "../models/page";
 import { serifClass } from "../helpers/serifHelper";
 
 export function Encontros({encontros}:{encontros:EncounterModel[]}){

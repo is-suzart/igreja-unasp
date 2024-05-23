@@ -2,7 +2,7 @@ import Image from "next/image";
 import Button from "./components/button";
 import {Banner} from "./components/banner";
 import { Encontros } from "./partials/encontros";
-import { getPage } from "./services/homeService";
+import { getPage } from "./services/home";
 
 
 

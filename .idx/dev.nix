@@ -11,8 +11,7 @@
     previews = [
       {
         command = [
-          "npm"
-          "run"
+          "yarn"
           "dev"
           "--"
           "--port"
@@ -24,8 +23,8 @@
         manager = "web";
       }
       {
-        id = "ios";
-        manager = "ios";
+        id = "web";
+        manager = "web";
       }
     ];
   };

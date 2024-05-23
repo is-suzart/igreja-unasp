@@ -1,6 +1,6 @@
 import axios from 'axios'
-import { PageModel } from '../models/pageModels'
-import { HeaderModel } from '../models/layoutModels'
+import { PageModel } from '../models/page'
+import { HeaderModel } from '../models/layout'
 const urlApi = 'https://igrejaunasp.com/api/wp-json/wp/v2/'
 
 // interface seoModel {

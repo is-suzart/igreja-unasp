@@ -1,9 +1,8 @@
 "use client"
-import { HeaderModel, MenuModel, SocialModel } from "../models/layoutModels";
+import { HeaderModel, MenuModel, SocialModel } from "../models/layout";
 import Link from "next/link";
 import { FaIcon } from "../helpers/fontAwesomeHelper";
 import { useEffect } from "react";
-
 
 export function Header({data}: {data: HeaderModel}) {
     useEffect(() => {

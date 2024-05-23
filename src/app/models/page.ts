@@ -1,4 +1,4 @@
-import { ButtonModel } from "./layoutModels";
+import { ButtonModel } from "./layout";
 
 export interface PageModel {
     id: number;

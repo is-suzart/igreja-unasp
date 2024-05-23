@@ -1,6 +1,6 @@
 import classnames  from  'classnames'
 import { FaIcon } from '../helpers/fontAwesomeHelper';
-import { ButtonModel } from '../models/layoutModels';
+import { ButtonModel } from '../models/layout';
 interface ButtonProps {
   text: string;
   link: string;

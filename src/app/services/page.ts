@@ -1,5 +1,5 @@
 import axios from "axios"
-import { PageModel } from "../models/pageModels"
+import { PageModel } from "../models/page"
 
 const urlApi = 'https://igrejaunasp.com/api/wp-json/wp/v2/'
 export async function getPage(title:string){

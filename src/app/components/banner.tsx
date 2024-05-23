@@ -1,13 +1,12 @@
-import { getPage } from "../services/homeService";
-import { BannerModel, PageModel } from "../models/pageModels";
+import { getPage } from "../services/home";
+import { BannerModel, PageModel } from "../models/page";
 import Button from "./button";
-import { ButtonModel } from "../models/layoutModels";
+import { ButtonModel } from "../models/layout";
 import { serifClass } from "../helpers/serifHelper";
 
 
 export async function Banner({bannerData}: {bannerData: BannerModel[]}) {
   //const bannerData = await getPage("index");
-
   const divStyle = {
     backgroundImage: `url("${bannerData[0].bg}")`,
     backgroundPosition: "center",
