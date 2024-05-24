@@ -1,13 +1,18 @@
 import { BlogModel } from "../models/blog"
 import { getBlogPage } from "../services/blog"
 export default async function Blog(){
-    const blogs = await getBlogPage()
+    const blogs:BlogModel[] = await getBlogPage()
+    const bannerStyle = {
+        backgroundImage: `url(${blogs[0].thumb})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+    };
     return (
         <div className="bg-slate-100">
-            <div className="bg-slate-900 flex items-center justify-center h-64 pt-10">
+            <div style={bannerStyle} className="flex items-center justify-center h-96 pt-10">
                 <h1 className="font-black text-4xl text-center text-white">Blog</h1>
             </div>
-            <div className="grid gap-8 grid-cols-3 mt-8 px-8">
+            <div className="grid gap-8 grid-cols-3 my-8 px-8">
                 {
                     blogs.map((blog:BlogModel) => {
                         const divStyle = {
