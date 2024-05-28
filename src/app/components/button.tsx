@@ -19,7 +19,8 @@ export default function Button({ text, link, outline, color, hasIcon, icon, isFu
           'duration-200': true,
           'ease-in-out': true,
           'border-transparent': !outline,
-          'text-white': !outline,
+          'text-white': !outline && color.toLocaleLowerCase() !== 'claro' && color.toLocaleLowerCase() !== 'aviso',
+          'text-slate-900' : !outline && (color.toLocaleLowerCase() == 'claro' || color.toLocaleLowerCase() == 'aviso'),
           [`hover:bg-${color.toLowerCase()}`]: outline,
           [`border-${color.toLowerCase()}`]: outline,
           [`text-${color.toLowerCase()}`]: outline,
@@ -39,7 +40,7 @@ export default function Button({ text, link, outline, color, hasIcon, icon, isFu
           {hasIcon ? 
             <span className='flex items-center' >
               <span className=' w-4'>
-                <FaIcon faClass={icon!.class} /> 
+                <FaIcon size='xl' faClass={icon!.class} /> 
               </span>
               
               <span className="ml-2">{text}</span> 
