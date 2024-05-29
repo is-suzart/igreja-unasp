@@ -1,6 +1,5 @@
 import { getBlogPageWithSlug } from '@/app/services/blog'
 import Button from '@/app/components/button'
-import DOMPurify from 'dompurify'
 type BlogPageProps = {
     params: {
         id: string
