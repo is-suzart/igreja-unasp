@@ -6,14 +6,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 library.add(fas, far, fab);
 
-export function FaIcon({faClass,size}:{faClass:string,size:SizeProp}) {
+export function FaIcon({faClass,size,id}:{faClass:string,size:SizeProp,id:string}) {
     function convertToFa(){
         let transformClass = faClass.split(" ")
         let finalClass: any = []
-        transformClass[0] == "fa-solid" ? finalClass.push("fas") : 
-        transformClass[0] == "fa-regular" ? finalClass.push("far") : 
-        transformClass[0] == "fa-brands" ? finalClass.push("fab") : ''
-        finalClass.push(transformClass[1].split("-")[1])
+        faClass.includes("fa-solid") ? finalClass.push("fas") : 
+        faClass.includes("fa-regular") ? finalClass.push("far") : 
+        faClass.includes("fa-brands")? finalClass.push("fab") : ""
+        finalClass.push(`fa-${id}`)
         return finalClass
     }
     return (

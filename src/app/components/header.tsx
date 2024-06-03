@@ -16,7 +16,6 @@ export function Header({data}: {data: HeaderModel}) {
         }
 
         window.addEventListener('scroll', handleScroll);
-
         return () => {
           window.removeEventListener('scroll', handleScroll);
         };
@@ -25,7 +24,7 @@ export function Header({data}: {data: HeaderModel}) {
         <header id="main-header" className="md:grid md:grid-cols-12 absolute top-0 z-10 w-full py-4 px-8">
             <div className="flex w-full items-center md:block md:col-span-3">
                 <div className="block md:hidden mr-8 text-slate-50 size-4">
-                    <FaIcon faClass="fa-solid fa-bars" size="sm" />
+                    <FaIcon faClass="fa-solid fa-bars" size="sm" id="bars" />
                 </div>
                 
                 <Link href="/">
@@ -54,7 +53,7 @@ export function Header({data}: {data: HeaderModel}) {
                                         key={x.name}
                                     >
                                         <div className="size-3 flex justify-center items-center">
-                                            <FaIcon faClass={x.icon.class} size="xs"  />
+                                            <FaIcon faClass={x.icon.class} size="xs" id={x.icon.id}  />
                                         </div>
                                     </div>
                                 </Link>
@@ -64,7 +63,7 @@ export function Header({data}: {data: HeaderModel}) {
                                     key={x.name}
                                 >
                                     <div className="text-sm">
-                                        <FaIcon size="xs" faClass={x.icon.class}  />
+                                        <FaIcon size="xs" faClass={x.icon.class} id={x.icon.id}  />
                                     </div>
                                 </div>
                             )}
