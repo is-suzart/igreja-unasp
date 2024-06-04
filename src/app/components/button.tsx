@@ -39,8 +39,8 @@ export default function Button({ text, link, outline, color, hasIcon, icon, isFu
             <button className={btnClasses()}>
           {hasIcon ? 
             <span className='flex items-center' >
-              <span className=' w-4'>
-                <FaIcon size='xl' faClass={icon!.class} /> 
+              <span className='w-[13px] h-[13px] flex items-center justify-center mx-2'>
+                <FaIcon size='sm' faClass={icon!.class} id={icon!.id} /> 
               </span>
               
               <span className="ml-2">{text}</span> 

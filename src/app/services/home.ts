@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { PageModel } from '../models/page'
+import { PageModel, SectionModel } from '../models/page'
 import { HeaderModel } from '../models/layout'
 const urlApi = 'https://igrejaunasp.com/api/wp-json/wp/v2/'
 
@@ -25,11 +25,26 @@ export async function getPage(title:string){
         }
     })
     const data = res.data
+    var sectionsOn: SectionModel[] = [];
+    var serverSection = data[0].acf.sections
+    if(serverSection?.sectionOrAd == "Seção") {
+        sectionsOn = serverSection.section.secao.map((x:any) => {
+            return<SectionModel> {
+                image: x.img,
+                title: x.title,
+                subTitle: x.subtitle,
+                align: x.align,
+                text: x.text,
+                buttons: x.buttons,
+                isVisible: x.visible
+            }
+        })
+    }
     const result: PageModel = {
         id: data[0].id,
         title: data[0].title.rendered,
         banner: data[0].acf.banner,
-        sections: data[0].acf.sections,
+        sections: sectionsOn,
         encontros: data[0].acf.encontros,
         seo: data[0].yoast_head_json
     }

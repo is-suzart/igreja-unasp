@@ -4,9 +4,18 @@ export interface PageModel {
     id: number;
     title: string;
     banner: BannerModel[];
-    sections: any;
+    sections: SectionModel[];
     encontros: EncounterModel[];
     seo?: any;
+}
+export interface SectionModel {
+    image: string,
+    title: string,
+    subTitle: string,
+    text: string,
+    align: string,
+    buttons: ButtonModel[],
+    isVisible: boolean
 }
 export interface BannerModel{
     subtitle: {

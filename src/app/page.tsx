@@ -3,6 +3,8 @@ import Button from "./components/button";
 import {Banner} from "./components/banner";
 import { Encontros } from "./partials/encontros";
 import { getPage } from "./services/home";
+import { Section } from "./components/section";
+import { SectionModel } from "./models/page";
 
 
 
@@ -12,6 +14,9 @@ export default async function Home() {
     <main className="">
       <Banner bannerData={homePage.banner} />
       <Encontros encontros={homePage.encontros} />
+      {homePage.sections.map((section: SectionModel, index: number) => (
+        <Section key={index} section={section} keyIndex={index} />
+      ))}
     </main>
   );
 }
