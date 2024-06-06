@@ -29,13 +29,19 @@ export async function getPage(title:string){
     var serverSection = data[0].acf.sections
     if(serverSection?.sectionOrAd == "Seção") {
         sectionsOn = serverSection.section.secao.map((x:any) => {
+            function addClassesToStrong(htmlString: string, color: string): string {
+                const colorClass = `text-${color.toLowerCase()}`;
+                const replacement = `<strong class="font-bold ${colorClass}">`;
+                return htmlString.replace(/<strong>/g, replacement);
+            }
+            var titulo = addClassesToStrong(x.titulo_com_cores.titulo, x.titulo_com_cores.color);
             return<SectionModel> {
                 image: x.img,
-                title: x.title,
+                title: titulo,
                 subTitle: x.subtitle,
                 align: x.align,
                 text: x.text,
-                buttons: x.buttons,
+                buttons: x.btns,
                 isVisible: x.visible
             }
         })
