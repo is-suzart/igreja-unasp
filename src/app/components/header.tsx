@@ -23,7 +23,7 @@ export function Header({data}: {data: HeaderModel}) {
     return (
         <header id="main-header" className="md:grid md:grid-cols-12 absolute top-0 z-10 w-full py-4 px-8">
             <div className="flex w-full items-center md:block md:col-span-3">
-                <div className="block md:hidden mr-8 text-slate-50 size-4">
+                <div className="flex md:hidden items-center mr-8 text-slate-50 size-4">
                     <FaIcon faClass="fa-solid fa-bars" size="sm" id="bars" />
                 </div>
                 

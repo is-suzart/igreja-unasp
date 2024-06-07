@@ -76,10 +76,10 @@ export function Section ({section,keyIndex}:{section:SectionModel,keyIndex:numbe
                                 </div>
   
                             )
-                        }) : 'não tem botão'}
+                        }) : ''}
                     </div>
                 </div>
-                <img className="rounded-lg lg:w-1/2 w-full" src={section.image} alt={'Imagem da seção: ' + section.title } />
+                <img className="rounded-lg lg:w-1/2 w-full mt-4 lg:mt-0" src={section.image} alt={'Imagem da seção: ' + section.title } />
             </div>
         </div>
     )
