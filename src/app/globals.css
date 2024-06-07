@@ -37,6 +37,12 @@
 .has-scroll {
   @apply bg-slate-900 fixed py-2 !important;
 }
+.menu-modal{
+  @apply transition-all duration-500 ease-in-out -left-[101vw];
+}
+.menu-modal.active{
+  @apply left-0;
+}
 .line-clamp-3 {
   display: -webkit-box;
   -webkit-line-clamp: 3;
