@@ -1,5 +1,6 @@
 import { getBlogPageWithSlug } from '@/app/services/blog'
 import Button from '@/app/components/button'
+import './blog.css'
 type BlogPageProps = {
     params: {
         id: string
