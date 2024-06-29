@@ -21,7 +21,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
                 <div style={bannerStyle} className='flex items-center justify-center h-96 pt-10'>
                 <h1 className='px-4 lg:px-0 font-black text-4xl text-center text-white'>{blog.title}</h1>
                 </div>
-                <div className='lg:mt-12 mt-8 px-8 lg:px-32'>
+                <div className='lg:mt-12 mt-8 px-8 lg:px-32 blog-container'>
                     <div dangerouslySetInnerHTML={{ __html: blog.html }}></div>
                 </div>
             </div>
