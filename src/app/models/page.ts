@@ -15,7 +15,8 @@ export interface SectionModel {
     text: string,
     align: string,
     buttons: ButtonModel[],
-    isVisible: boolean
+    isVisible: boolean,
+    type: 'Seção' | 'Anuncio'
 }
 export interface BannerModel{
     subtitle: {

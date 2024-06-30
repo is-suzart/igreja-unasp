@@ -26,9 +26,8 @@ export async function getPage(title:string){
     })
     const data = res.data
     var sectionsOn: SectionModel[] = [];
-    var serverSection = data[0].acf.sections
-    if(serverSection?.sectionOrAd == "Seção") {
-        sectionsOn = serverSection.section.secao.map((x:any) => {
+    var serverSection = data[0].acf.secao
+        sectionsOn = serverSection.map((x:any) => {
             function addClassesToStrong(htmlString: string, color: string): string {
                 const colorClass = `text-${color.toLowerCase()}`;
                 const replacement = `<strong class="font-bold ${colorClass}">`;
@@ -42,10 +41,11 @@ export async function getPage(title:string){
                 align: x.align,
                 text: x.text,
                 buttons: x.btns,
-                isVisible: x.visible
+                isVisible: x.visible,
+                type: x.isSection
             }
         })
-    }
+
     const result: PageModel = {
         id: data[0].id,
         title: data[0].title.rendered,
