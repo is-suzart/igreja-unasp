@@ -64,7 +64,7 @@ export function Section ({section,keyIndex}:{section:SectionModel,keyIndex:numbe
                         
                         section.buttons && section.buttons.length > 0 ? section.buttons.map((btn:ButtonModel,index:number) => {
                             return (
-                                <div className="my-3">
+                                <div className="my-3" key={index}>
                                 <Button
                                         key={index}
                                         text={btn.text}
@@ -80,7 +80,7 @@ export function Section ({section,keyIndex}:{section:SectionModel,keyIndex:numbe
                         }) : ''}
                     </div>
                 </div>
-                <img className="rounded-lg lg:w-1/2 w-full mt-4 lg:mt-0" src={section.image} alt={'Imagem da seção: ' + section.title } />
+                <img className="rounded-lg lg:w-1/2 w-full mt-4 lg:mt-0 flex-shrink-0" src={section.image} alt={'Imagem da seção: ' + section.title } />
             </div>
         </div>
     )

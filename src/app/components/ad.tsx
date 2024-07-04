@@ -21,7 +21,7 @@ export function Anuncio({anuncio,key}:{anuncio:SectionModel,key:number}){
                                 
                                 anuncio.buttons && anuncio.buttons.length > 0 ? anuncio.buttons.map((btn:ButtonModel,index:number) => {
                                     return (
-                                        <div className="my-3">
+                                        <div className="my-3" key={index}>
                                         <Button
                                                 key={index}
                                                 text={btn.text}
