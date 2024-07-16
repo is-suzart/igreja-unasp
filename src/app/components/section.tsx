@@ -8,33 +8,38 @@ export function Section ({section,keyIndex}:{section:SectionModel,keyIndex:numbe
     function classNames(tag:string) : string {
         if(tag == 'h1'){
             return classnames({
-                'text-2xl font-bold': true,
+                'text-2xl font-bold': section.image,
+                'text-3xl font-bold text-center': !section.image,
                 'text-slate-900': true,
                 'lg:text-left lg:w-5/6': section.align != "Esquerda"
             })
         } else if(tag == 'h6'){
             return classnames({
-                'text-lg font-bold font-serif italic': true,
+                'text-lg font-bold font-serif italic': section.image,
+                'text-xl font-bold font-serif italic text-center': !section.image,
                 'text-gray-800': true,
                 'lg:text-left lg:w-5/6': section.align != "Esquerda"
             })
         } else if(tag == 'p') {
             return classnames({
                 'text-base font-medium mt-4': true,
-                'lg:text-left': section.align != "Esquerda"
+                'lg:text-left': section.align != "Esquerda" && section.image,
+                'lg:text-center': !section.image
             })
         } else if(tag == 'section'){
             return classnames({
                 'lg:col-span-8 col-span-12': true,
                 'lg:col-start-3 lg:col-end-11': true,
                 'lg:flex lg:px-0 px-8': true,
-                'justify-between': section.align == "Esquerda",
-                'flex-row-reverse': section.align == "Esquerda"
+                
+                'justify-between': section.align == "Esquerda" && section.image,
+                'flex-row-reverse': section.align == "Esquerda" && section.image,
+                'justify-center': !section.image
             })
         } else if(tag == 'between') {
             return classnames({
-                'lg:ml-16': section.align == "Esquerda",
-                'lg:mr-16': section.align != "Esquerda",
+                'lg:ml-16': section.align == "Esquerda" && section.image,
+                'lg:mr-16': section.align != "Esquerda" && section.image,
             })
         } else if(tag == 'grid') {
             return classnames({
@@ -80,7 +85,9 @@ export function Section ({section,keyIndex}:{section:SectionModel,keyIndex:numbe
                         }) : ''}
                     </div>
                 </div>
+                {section.image ?
                 <img className="rounded-lg lg:w-1/2 w-full mt-4 lg:mt-0 flex-shrink-0" src={section.image} alt={'Imagem da seção: ' + section.title } />
+                : ''}
             </div>
         </div>
     )

@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { PageModel, SectionModel } from '../models/page'
+import { LinksModel, PageModel, SectionModel } from '../models/page'
 import { HeaderModel } from '../models/layout'
 const urlApi = 'https://igrejaunasp.com/api/wp-json/wp/v2/'
 
@@ -21,7 +21,7 @@ export async function getPage(title:string){
         method: 'get',
         url: `${urlApi}pages`,
         params: {
-            title: title
+            slug: title
         }
     })
     const data = res.data
@@ -41,7 +41,7 @@ export async function getPage(title:string){
                 align: x.align,
                 text: x.text,
                 buttons: x.btns,
-                isVisible: x.visible,
+                categoriasMembros: x.categorias_membros,
                 type: x.isSection
             }
         })
@@ -71,6 +71,23 @@ export async function getUnaspHeader(){
         logo: data[0].acf.header.logo,
         menus: data[0].acf.header.menus,
         social: data[0].acf.header.social
+    }
+    return result
+}
+export async function getLinks(title:string){
+    const res:any = await axios({
+        method: 'get',
+        url: `${urlApi}pages`,
+        params: {
+            slug: title
+        }
+    })
+    const data = res.data
+    const result: LinksModel = {
+        id: data[0].id,
+        title: data[0].title.rendered,
+        background: data[0].acf.background,
+        btns: data[0].acf.btns
     }
     return result
 }

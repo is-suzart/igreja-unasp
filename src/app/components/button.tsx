@@ -37,7 +37,7 @@ export default function Button({ text, link, outline, color, hasIcon, icon, isFu
     return (
         <a href={link !== "" ? link : undefined}>
             <button className={btnClasses()}>
-          {hasIcon ? 
+          {hasIcon  && icon ? 
             <span className='flex items-center' >
               <span className='w-[13px] h-[13px] flex items-center justify-center mx-2'>
                 <FaIcon size='sm' faClass={icon!.class} id={icon!.id} /> 

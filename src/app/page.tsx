@@ -19,7 +19,7 @@ export default async function Home() {
         section.type === 'Seção' ?
         <Section key={index} section={section} keyIndex={index} />
         :
-        <Anuncio key={index} anuncio={section} />
+        <Anuncio key={index} anuncio={section} keyIndex={index} />
       ))}
     </main>
   );

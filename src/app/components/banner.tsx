@@ -32,7 +32,7 @@ export async function Banner({bannerData}: {bannerData: BannerModel[]}) {
           </p>
           <div className="mt-8">
               {
-                bannerData[0].btns.map((item:ButtonModel, index:number) => {
+              bannerData[0].btns ?  bannerData[0].btns.map((item:ButtonModel, index:number) => {
                   return (
                     <div className="mb-4" key={index}>
                       <Button
@@ -47,7 +47,7 @@ export async function Banner({bannerData}: {bannerData: BannerModel[]}) {
                     </div>
   
                   )
-                })
+                }) : ''
               }
             </div>
         </div>

@@ -15,8 +15,8 @@ export interface SectionModel {
     text: string,
     align: string,
     buttons: ButtonModel[],
-    isVisible: boolean,
-    type: 'Seção' | 'Anuncio'
+    categoriasMembros: any,
+    type: 'Seção' | 'Anuncio' | 'Membros'
 }
 export interface BannerModel{
     subtitle: {
@@ -43,3 +43,9 @@ export interface EncounterModel {
     text: string;
 }
 
+export interface LinksModel{
+    id: number;
+    title: string;
+    background: string;
+    btns: ButtonModel[];
+}
