@@ -2,6 +2,7 @@ import { ButtonModel } from "../models/layout";
 import { SectionModel } from "../models/page";
 import classnames  from  'classnames'
 import Button from "./button";
+import Members from "./membros";
 
 export function Section ({section,keyIndex}:{section:SectionModel,keyIndex:number}){
 
@@ -47,6 +48,10 @@ export function Section ({section,keyIndex}:{section:SectionModel,keyIndex:numbe
                 'gap-8': true,
                 'justify-items-center': true,
                 'justify-center': true,
+
+            })
+        } else if(tag == 'background'){
+            return classnames({
                 'bg-white': keyIndex % 2 === 0,
                 'bg-slate-100': keyIndex % 2 !== 0,
             })
@@ -56,39 +61,51 @@ export function Section ({section,keyIndex}:{section:SectionModel,keyIndex:numbe
 
     }
     return (
-        
-        <div className={classNames('grid')}>
-            <div className={classNames('section')}>
-                <div className={classNames('between')}>
-                    <h6 className={classNames('h6')}>{section.subTitle}</h6>
-                    <h1 className={classNames('h1')} dangerouslySetInnerHTML={{__html: section.title}}/>
-                    <p className={classNames('p')}>{section.text}</p>
-                    <div className="mt-4">
-                        
-                        {
-                        
-                        section.buttons && section.buttons.length > 0 ? section.buttons.map((btn:ButtonModel,index:number) => {
-                            return (
-                                <div className="my-3" key={index}>
-                                <Button
-                                        key={index}
-                                        text={btn.text}
-                                        link={btn.link}
-                                        color={btn.color}
-                                        icon={btn.icon} 
-                                        outline={btn.outline} 
-                                        hasIcon={btn.icon != null}
-                                        isFullSize={true}/>
-                                </div>
-  
-                            )
-                        }) : ''}
+        <div className={classNames('background')}>
+            <div className={classNames('grid')}>
+                <div className={classNames('section')}>
+                    <div className={classNames('between')}>
+                        <h6 className={classNames('h6')}>{section.subTitle}</h6>
+                        <h1 className={classNames('h1')} dangerouslySetInnerHTML={{__html: section.title}}/>
+                        <p className={classNames('p')}>{section.text}</p>
+                        <div className="mt-4">
+                            
+                            {
+                            
+                            section.buttons && section.buttons.length > 0 ? section.buttons.map((btn:ButtonModel,index:number) => {
+                                return (
+                                    <div className="my-3" key={index}>
+                                    <Button
+                                            key={index}
+                                            text={btn.text}
+                                            link={btn.link}
+                                            color={btn.color}
+                                            icon={btn.icon} 
+                                            outline={btn.outline} 
+                                            hasIcon={btn.icon != null}
+                                            isFullSize={true}/>
+                                    </div>
+    
+                                )
+                            }) : ''}
+                        </div>
                     </div>
+                    {section.image ?
+                    <img className="rounded-lg lg:w-1/2 w-full mt-4 lg:mt-0 flex-shrink-0" src={section.image} alt={'Imagem da seção: ' + section.title } />
+                    : ''}
                 </div>
-                {section.image ?
-                <img className="rounded-lg lg:w-1/2 w-full mt-4 lg:mt-0 flex-shrink-0" src={section.image} alt={'Imagem da seção: ' + section.title } />
-                : ''}
             </div>
+            {
+                    section.categoriasMembros ?
+                    <div className={classNames('grid')}>
+                        <div className={classNames('section')}>
+                            <Members categories={section.categoriasMembros}/>
+                        </div>
+                        
+                    </div>
+                    : ''
+                }
         </div>
+
     )
 }

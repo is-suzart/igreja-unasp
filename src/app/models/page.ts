@@ -1,4 +1,4 @@
-import { ButtonModel } from "./layout";
+import { ButtonModel, SocialModel } from "./layout";
 
 export interface PageModel {
     id: number;
@@ -28,12 +28,6 @@ export interface BannerModel{
     bg: string;
     btns: ButtonModel[];
 }
-export interface SectionModel {
-    id: number;
-    title: string;
-    image: string;
-    link: string;
-}
 export interface EncounterModel {
     subtitle: {
         text: string;
@@ -48,4 +42,12 @@ export interface LinksModel{
     title: string;
     background: string;
     btns: ButtonModel[];
+}
+export interface MemberModel{
+    id: string;
+    name: string;
+    text: string;
+    photo: string | undefined;
+    cargo: any;
+    social: SocialModel[] | null;
 }

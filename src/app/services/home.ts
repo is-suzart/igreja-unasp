@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { LinksModel, PageModel, SectionModel } from '../models/page'
+import { LinksModel, MemberModel, PageModel, SectionModel } from '../models/page'
 import { HeaderModel } from '../models/layout'
 const urlApi = 'https://igrejaunasp.com/api/wp-json/wp/v2/'
 
@@ -41,7 +41,7 @@ export async function getPage(title:string){
                 align: x.align,
                 text: x.text,
                 buttons: x.btns,
-                categoriasMembros: x.categorias_membros,
+                categoriasMembros: x.isSection == "Membros" ? x.categorias_membros : null,
                 type: x.isSection
             }
         })
@@ -89,5 +89,29 @@ export async function getLinks(title:string){
         background: data[0].acf.background,
         btns: data[0].acf.btns
     }
+    return result
+}
+export async function getMembers(categories:number[]){
+    const categoriesIDS = categories.join(',')
+    const res:any = await axios({
+        method: 'get',
+        url: `${urlApi}membro`,
+        params: {
+            categories: categoriesIDS
+        }
+    })
+    const data = res.data
+    var result: MemberModel[] = [];
+    result = data.map((x:any) => {
+        return <MemberModel>{
+            id: x.id,
+            name: x.title.rendered,
+            photo: x.yoast_head_json.og_image ? x.yoast_head_json.og_image[0].url : undefined,
+            text: x.content.rendered,
+            cargo: x.acf.cargo,
+            social: x.acf.social
+        }
+    })
+
     return result
 }
