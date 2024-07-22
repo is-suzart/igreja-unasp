@@ -26,10 +26,17 @@ export interface FaIconModel {
 
 export interface ButtonModel{
     text: string,
-    link: string,
+    link: LinkModel,
     outline: boolean,
     color: 'perigo' | 'sucesso' | 'aviso' | 'link' | 'escuro' | 'claro',
     hasIcon: boolean,
     icon?: FaIconModel,
     isFullSize?: boolean
+}
+
+export interface LinkModel {
+    kind: 'Interno' | 'Externo',
+    url_inter: string,
+    url_ext: string,
+    forma: 'Direto' | 'Externo'
 }

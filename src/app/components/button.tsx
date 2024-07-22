@@ -1,6 +1,8 @@
 import classnames  from  'classnames'
 import { FaIcon } from '../helpers/fontAwesomeHelper';
 import { ButtonModel } from '../models/layout';
+import { handleTarget, handleUrl } from '../helpers/handleLink';
+import Link from 'next/link';
 interface ButtonProps {
   text: string;
   link: string;
@@ -35,7 +37,7 @@ export default function Button({ text, link, outline, color, hasIcon, icon, isFu
       }
 
     return (
-        <a href={link !== "" ? link : undefined}>
+        <Link href={handleUrl(link)} target={handleTarget(link)}>
             <button className={btnClasses()}>
           {hasIcon  && icon ? 
             <span className='flex items-center' >
@@ -47,7 +49,7 @@ export default function Button({ text, link, outline, color, hasIcon, icon, isFu
             </span>  : 
             text}
           </button>
-        </a> 
+        </Link> 
         
     );
 }
