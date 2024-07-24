@@ -97,12 +97,7 @@ export function Section ({section,keyIndex}:{section:SectionModel,keyIndex:numbe
             </div>
             {
                     section.categoriasMembros ?
-                    <div className={classNames('grid')}>
-                        <div className={classNames('section')}>
-                            <Members categories={section.categoriasMembros}/>
-                        </div>
-                        
-                    </div>
+                        <Members categories={section.categoriasMembros}/>
                     : ''
                 }
         </div>
