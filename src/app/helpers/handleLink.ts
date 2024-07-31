@@ -1,4 +1,4 @@
-import { LinkModel } from "../models/layout";
+import { LinkModel } from "../models/layout.model";
 
 export function handleUrl(link:LinkModel):string{
     if (link.kind === "Interno" && link.url_inter.includes("https://igrejaunasp.com/api")){

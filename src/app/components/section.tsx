@@ -1,4 +1,4 @@
-import { ButtonModel } from "../models/layout";
+import { ButtonModel } from "../models/layout.model";
 import { SectionModel } from "../models/page";
 import classnames  from  'classnames'
 import Button from "./button";
@@ -79,7 +79,7 @@ export function Section ({section,keyIndex}:{section:SectionModel,keyIndex:numbe
                                             key={index}
                                             text={btn.text}
                                             link={btn.link}
-                                            color={btn.color}
+                                            color_grupo={btn.color_grupo}
                                             icon={btn.icon} 
                                             outline={btn.outline} 
                                             hasIcon={btn.icon != null}

@@ -1,8 +1,10 @@
 import { getPage } from "../services/home";
 import { BannerModel, PageModel } from "../models/page";
 import Button from "./button";
-import { ButtonModel } from "../models/layout";
+import { ButtonModel } from "../models/layout.model";
 import { serifClass } from "../helpers/serifHelper";
+import { json } from "stream/consumers";
+import { returnColor } from "../helpers/colorHelper";
 
 
 export async function Banner({bannerData}: {bannerData: BannerModel[]}) {
@@ -21,7 +23,7 @@ export async function Banner({bannerData}: {bannerData: BannerModel[]}) {
         <div className=" ">
           <h5
             className={`${serifClass
-              } text-3xl text-${bannerData[0].subtitle.color.toLocaleLowerCase()} font-bold`}>
+              } text-3xl text-${returnColor(bannerData[0].subtitle.color_grupo)} font-bold`}>
             {bannerData[0].subtitle.text}
           </h5>
           <h1 className=" font-black text-5xl">
@@ -37,7 +39,7 @@ export async function Banner({bannerData}: {bannerData: BannerModel[]}) {
                     <div className="mb-4" key={index}>
                       <Button
                         text={item.text}
-                        color={item.color}
+                        color_grupo={item.color_grupo}
                         link={item.link}
                         outline={item.hasIcon}
                         hasIcon={item.hasIcon}

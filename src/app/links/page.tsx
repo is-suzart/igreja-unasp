@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Button from "../components/button";
-import { ButtonModel } from "../models/layout";
+import { ButtonModel } from "../models/layout.model";
 import { getLinks } from "../services/home";
 
 export default async function Links(){
@@ -24,7 +24,7 @@ export default async function Links(){
                         <Button
                             text={btn.text}
                             link={btn.link}
-                            color={btn.color}
+                            color_grupo={btn.color_grupo}
                             icon={btn.icon} 
                             outline={btn.outline} 
                             hasIcon={btn.icon != null}

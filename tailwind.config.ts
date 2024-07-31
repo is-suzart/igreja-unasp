@@ -61,12 +61,25 @@ const config: Config = {
     },
   plugins: [],
   safelist: [
-    'text-perigo', 'text-perigo-hover', 'hover:text-perigo-hover', 'hover:bg-perigo-hover', 'hover:bg-perigo', 'hover:border-perigo-hover', 'bg-perigo', 'bg-perigo-hover', 'border-perigo', 'border-perigo-hover',
-    'text-sucesso', 'text-sucesso-hover', 'hover:text-sucesso-hover', 'hover:bg-sucesso-hover', 'hover:bg-sucesso', 'hover:border-sucesso-hover', 'bg-sucesso', 'bg-sucesso-hover', 'border-sucesso', 'border-sucesso-hover',
-    'text-aviso', 'text-aviso-hover', 'hover:text-aviso-hover', 'hover:bg-aviso-hover', 'hover:bg-aviso', 'hover:border-aviso-hover', 'bg-aviso', 'bg-aviso-hover', 'border-aviso', 'border-aviso-hover',
-    'text-link', 'text-link-hover', 'hover:text-link-hover', 'hover:bg-link-hover', 'hover:bg-link', 'hover:border-link-hover', 'bg-link', 'bg-link-hover', 'border-link', 'border-link-hover',
-    'text-escuro', 'text-escuro-hover', 'hover:text-escuro-hover', 'hover:bg-escuro-hover', 'hover:bg-escuro', 'hover:border-escuro-hover', 'bg-escuro', 'bg-escuro-hover', 'border-escuro', 'border-escuro-hover',
-    'text-claro', 'text-claro-hover', 'hover:text-claro-hover', 'hover:bg-claro-hover', 'hover:bg-claro', 'hover:border-claro-hover', 'bg-claro', 'bg-claro-hover', 'border-claro', 'border-claro-hover',
+    {
+      pattern: /^text-(red|slate|stone|orange|amber|lime|emerald|sky|violet|purple|rose)-(100|200|300|400|500|600|700|800|900|950)$/,
+    },
+    // Cores de background
+    {
+      pattern: /^bg-(red|slate|stone|orange|amber|lime|emerald|sky|violet|purple|rose)-(100|200|300|400|500|600|700|800|900|950)$/,
+    },
+        // Hover para cores de texto
+    {
+      pattern: /^hover:text-(red|slate|zinc|neutral|stone|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|pink|rose|gray|black|white)-(100|200|300|400|500|600|700|800|900)$/,
+    },
+    // Hover para cores de background
+    {
+      pattern: /^hover:bg-(red|slate|zinc|neutral|stone|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|pink|rose|gray|black|white)-(100|200|300|400|500|600|700|800|900)$/,
+    },
+    // Cores de borda
+    {
+      pattern: /^border-(red|slate|stone|orange|amber|lime|emerald|sky|violet|purple|rose)-(100|200|300|400|500|600|700|800|900|950)$/,
+    },
     'grid-cols-1', 'grid-cols-2', 'grid-cols-3', 'grid-cols-4', 'grid-cols-5', 'grid-cols-6', 'grid-cols-7', 'grid-cols-8', 'grid-cols-9',
     'w-100%','w-200%','w-300%','w-400%','w-500%','w-600%','w-700%','w-800%','w-900%'
     

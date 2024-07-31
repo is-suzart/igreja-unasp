@@ -1,5 +1,6 @@
 import { EncounterModel } from "../models/page";
 import { serifClass } from "../helpers/serifHelper";
+import { returnColor } from "../helpers/colorHelper";
 
 export function Encontros({encontros}:{encontros:EncounterModel[]}){
     return (
@@ -10,7 +11,7 @@ export function Encontros({encontros}:{encontros:EncounterModel[]}){
                         return (
                             <div className="bg-white text-slate-900 rounded-lg p-4 col-span-1" key={x.subtitle.text}>
                                 <div className="py-1 mb-1">
-                                    <h6 className={`text-${x.subtitle.color.toLocaleLowerCase()} ${serifClass} font-bold text-sm`}>{x.subtitle.text}</h6>
+                                    <h6 className={`text-${returnColor(x.subtitle.color_grupo)} ${serifClass} font-bold text-sm`}>{x.subtitle.text}</h6>
                                     <h5 className=" font-bold">{x.title}</h5>
                                 </div>
                                 <div className=" text-xs" dangerouslySetInnerHTML={{__html:x.text}}></div>

@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { LinksModel, MemberModel, PageModel, SectionModel } from '../models/page'
-import { HeaderModel } from '../models/layout'
+import { ColorGroup, HeaderModel } from '../models/layout.model'
+import { returnColor } from '../helpers/colorHelper'
 const urlApi = 'https://igrejaunasp.com/api/wp-json/wp/v2/'
 
 // interface seoModel {
@@ -28,12 +29,12 @@ export async function getPage(title:string){
     var sectionsOn: SectionModel[] = [];
     var serverSection = data[0].acf.secao
         sectionsOn = serverSection.map((x:any) => {
-            function addClassesToStrong(htmlString: string, color: string): string {
-                const colorClass = `text-${color.toLowerCase()}`;
+            function addClassesToStrong(htmlString: string, color: ColorGroup): string {
+                const colorClass = `text-${returnColor(color)}`;
                 const replacement = `<strong class="font-bold ${colorClass}">`;
                 return htmlString.replace(/<strong>/g, replacement);
             }
-            var titulo = addClassesToStrong(x.titulo_com_cores.titulo, x.titulo_com_cores.color);
+            var titulo = addClassesToStrong(x.titulo_com_cores.titulo, x.titulo_com_cores.color_grupo);
             return<SectionModel> {
                 image: x.img,
                 title: titulo,

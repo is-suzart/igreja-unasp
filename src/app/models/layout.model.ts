@@ -28,12 +28,15 @@ export interface ButtonModel{
     text: string,
     link: LinkModel,
     outline: boolean,
-    color: 'perigo' | 'sucesso' | 'aviso' | 'link' | 'escuro' | 'claro',
     hasIcon: boolean,
     icon?: FaIconModel,
-    isFullSize?: boolean
+    isFullSize?: boolean,
+    color_grupo: ColorGroup
 }
-
+export interface ColorGroup{
+    shade: string;
+    colors: string;
+}
 export interface LinkModel {
     kind: 'Interno' | 'Externo',
     url_inter: string,

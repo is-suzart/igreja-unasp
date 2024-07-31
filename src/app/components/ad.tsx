@@ -1,4 +1,4 @@
-import { ButtonModel } from "../models/layout";
+import { ButtonModel } from "../models/layout.model";
 import { SectionModel } from "../models/page";
 import Button from "./button";
 
@@ -25,7 +25,7 @@ export function Anuncio({anuncio,keyIndex}:{anuncio:SectionModel,keyIndex:number
                                         <Button
                                                 text={btn.text}
                                                 link={btn.link}
-                                                color={btn.color}
+                                                color_grupo={btn.color_grupo}
                                                 icon={btn.icon} 
                                                 outline={btn.outline} 
                                                 hasIcon={btn.icon != null}

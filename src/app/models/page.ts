@@ -1,4 +1,4 @@
-import { ButtonModel, SocialModel } from "./layout";
+import { ButtonModel, ColorGroup, SocialModel } from "./layout.model";
 
 export interface PageModel {
     id: number;
@@ -21,7 +21,7 @@ export interface SectionModel {
 export interface BannerModel{
     subtitle: {
         text: string;
-        color: string;
+        color_grupo: ColorGroup;
     }
     title: string;
     text: string;
@@ -31,7 +31,7 @@ export interface BannerModel{
 export interface EncounterModel {
     subtitle: {
         text: string;
-        color: string;
+        color_grupo: ColorGroup;
     };
     title: string;
     text: string;

@@ -1,4 +1,4 @@
-import { SocialModel } from "../models/layout";
+import { SocialModel } from "../models/layout.model";
 import { MemberModel } from "../models/page";
 import { getMembers } from "../services/home";
 import { SocialItem } from "./header";

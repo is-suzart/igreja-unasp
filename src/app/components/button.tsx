@@ -1,8 +1,9 @@
 import classnames  from  'classnames'
 import { FaIcon } from '../helpers/fontAwesomeHelper';
-import { ButtonModel } from '../models/layout';
+import { ButtonModel } from '../models/layout.model';
 import { handleTarget, handleUrl } from '../helpers/handleLink';
 import Link from 'next/link';
+import { handleBtnColors } from '../helpers/colorHelper';
 interface ButtonProps {
   text: string;
   link: string;
@@ -13,32 +14,11 @@ interface ButtonProps {
   isFullSize?: boolean;
 }
 
-export default function Button({ text, link, outline, color, hasIcon, icon, isFullSize }: ButtonModel) {
-    function btnClasses(): string {
-        const baseClasses = {
-          'custom-btn': true,
-          'transition-all': true,
-          'duration-200': true,
-          'ease-in-out': true,
-          'border-transparent': !outline,
-          'text-white': !outline && color.toLocaleLowerCase() !== 'claro' && color.toLocaleLowerCase() !== 'aviso',
-          'text-slate-900' : !outline && (color.toLocaleLowerCase() == 'claro' || color.toLocaleLowerCase() == 'aviso'),
-          [`hover:bg-${color.toLowerCase()}`]: outline,
-          [`border-${color.toLowerCase()}`]: outline,
-          [`text-${color.toLowerCase()}`]: outline,
-          [`hover:text-white`]: outline && color.toLocaleLowerCase() !== 'claro' && color.toLocaleLowerCase() !== 'aviso',
-          [`hover:text-slate-900`]: outline && (color.toLocaleLowerCase() == 'claro' || color.toLocaleLowerCase() == 'aviso'),
-          [`bg-${color.toLowerCase()}`]: !outline,
-          [`hover:bg-${color.toLowerCase()}-hover`]: !outline,
-          [`w-full`]: isFullSize
-        };
-      
-        return classnames(baseClasses);
-      }
+export default function Button({ text, link, outline, color_grupo, hasIcon, icon, isFullSize }: ButtonModel) {
 
     return (
         <Link href={handleUrl(link)} target={handleTarget(link)}>
-            <button className={btnClasses()}>
+            <button className={handleBtnColors(color_grupo,outline)}>
           {hasIcon  && icon ? 
             <span className='flex items-center' >
               <span className='w-[13px] h-[13px] flex items-center justify-center mx-2'>

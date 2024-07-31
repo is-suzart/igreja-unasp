@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MenuModel, SocialModel } from "../models/layout";
+import { MenuModel, SocialModel } from "../models/layout.model";
 import { FaIcon } from "../helpers/fontAwesomeHelper";
 import { MenuItem,SocialItem } from "./header";
 
