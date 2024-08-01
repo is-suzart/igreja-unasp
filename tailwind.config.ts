@@ -62,23 +62,18 @@ const config: Config = {
   plugins: [],
   safelist: [
     {
-      pattern: /^text-(red|slate|stone|orange|amber|lime|emerald|sky|violet|purple|rose)-(100|200|300|400|500|600|700|800|900|950)$/,
+      pattern: /^text-(red|slate|stone|orange|amber|lime|emerald|sky|violet|purple|rose)-(50|100|200|300|400|500|600|700|800|900|950)$/,
+      variants: ['hover']
     },
     // Cores de background
     {
-      pattern: /^bg-(red|slate|stone|orange|amber|lime|emerald|sky|violet|purple|rose)-(100|200|300|400|500|600|700|800|900|950)$/,
-    },
-        // Hover para cores de texto
-    {
-      pattern: /^hover:text-(red|slate|zinc|neutral|stone|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|pink|rose|gray|black|white)-(100|200|300|400|500|600|700|800|900)$/,
-    },
-    // Hover para cores de background
-    {
-      pattern: /^hover:bg-(red|slate|zinc|neutral|stone|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|pink|rose|gray|black|white)-(100|200|300|400|500|600|700|800|900)$/,
+      pattern: /^bg-(red|slate|stone|orange|amber|lime|emerald|sky|violet|purple|rose)-(50|100|200|300|400|500|600|700|800|900|950)$/,
+      variants: ['hover']
     },
     // Cores de borda
     {
-      pattern: /^border-(red|slate|stone|orange|amber|lime|emerald|sky|violet|purple|rose)-(100|200|300|400|500|600|700|800|900|950)$/,
+      pattern: /^border-(red|slate|stone|orange|amber|lime|emerald|sky|violet|purple|rose)-(50|100|200|300|400|500|600|700|800|900|950)$/,
+      variants: ['hover']
     },
     'grid-cols-1', 'grid-cols-2', 'grid-cols-3', 'grid-cols-4', 'grid-cols-5', 'grid-cols-6', 'grid-cols-7', 'grid-cols-8', 'grid-cols-9',
     'w-100%','w-200%','w-300%','w-400%','w-500%','w-600%','w-700%','w-800%','w-900%'
