@@ -1,6 +1,7 @@
 import { getBlogPageWithSlug } from '@/app/services/blog'
 import Button from '@/app/components/button'
 import './blog.css'
+import { ColorGroup, LinkModel } from '@/app/models/layout.model'
 type BlogPageProps = {
     params: {
         id: string
@@ -8,6 +9,7 @@ type BlogPageProps = {
 }
 export default async function BlogPage({ params }: BlogPageProps) {
     const id = params.id
+
     
     const blog = await getBlogPageWithSlug(id);
     const bannerStyle = {
@@ -27,14 +29,25 @@ export default async function BlogPage({ params }: BlogPageProps) {
             </div>
         )
     } else {
+        var link:LinkModel = {
+            kind: 'Interno',
+            url_inter: "/blog",
+            url_ext: "",
+            forma:"Direto"
+        }
+        var color:ColorGroup = {
+            'shade': '50',
+            'colors': 'Slate'
+        }
         return (
+            
             <div className=' h-screen bg-slate-900 text-white flex justify-center items-center'>
                 <div className='flex flex-col items-center'>
                     <h1 className='font-serif text-4xl mb-4'>Texto não encontrado!</h1>
                     <Button 
                     text='Voltar' 
-                    link='/blog' 
-                    color='claro' 
+                    link={link}
+                    color_grupo={color} 
                     outline={false} 
                     hasIcon={false} 
                     isFullSize={false}/>

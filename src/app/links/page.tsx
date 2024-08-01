@@ -14,6 +14,7 @@ export default async function Links(){
         <main style={bgStyle} className="w-full h-screen px-8 flex items-center flex-col">
             <div className="py-8 flex justify-center items-center">
                 <a href={'/'}>
+                    {/* <Image></Image> */}
                     <img src="https://igrejaunasp.com/api/wp-content/uploads/2024/04/logo-unasp-white.svg" alt="Logo igreja Unasp" />
                 </a>
             </div>

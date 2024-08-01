@@ -21,7 +21,7 @@ export default async function Members({categories}:{categories:number[]}){
                             background: m.photo ? `linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.99) 100%),url(${m.photo}) center / cover` : '#0f172a',
                         };
                     return (
-                        <div style={memberPic} className="col-span-4  w-full h-[50vh] rounded-lg p-4 flex flex-col justify-end ">
+                        <div style={memberPic} className="col-span-4  w-full h-[50vh] rounded-lg p-4 flex flex-col justify-end " key={index}>
                                 <h4 className="font-bold text-xl mt-4 text-slate-50 ml-2">{m.name}</h4>
                                 {m.cargo && m.cargo.length > 0 ? <h6 className="text-sm text-amber-400 ml-2">{m.cargo[0]["name"]}</h6> : ''}
 

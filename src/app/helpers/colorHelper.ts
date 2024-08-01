@@ -2,11 +2,11 @@ import classNames from "classnames";
 import { ColorGroup } from "../models/layout.model";
 
 export function returnColor(colorGroup:ColorGroup){
-    return colorGroup.colors.toLocaleLowerCase()+ '-' + colorGroup.shade.toLocaleLowerCase()
+    return colorGroup.colors.toLowerCase()+ '-' + colorGroup.shade.toLowerCase()
 }
 export function returnHoverColor(colorGroup:ColorGroup){
     var finalShade = colorGroup.shade == '50' ? '100' : colorGroup.shade == '900' ? '950' : (Number(colorGroup.shade) + 100).toString()
-    return colorGroup.colors.toLocaleLowerCase()+ '-' + finalShade
+    return colorGroup.colors.toLowerCase()+ '-' + finalShade
 }
 export function handleBtnColors(colorGroup:ColorGroup,outline:boolean){
     if(!colorGroup){
