@@ -1,5 +1,5 @@
 import { getPage } from "../services/home";
-import { BannerModel, PageModel } from "../models/page";
+import { BannerModel, PageModel } from "../models/page.model";
 import Button from "./button";
 import { ButtonModel } from "../models/layout.model";
 import { serifClass } from "../helpers/serifHelper";

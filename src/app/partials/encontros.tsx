@@ -1,4 +1,4 @@
-import { EncounterModel } from "../models/page";
+import { EncounterModel } from "../models/page.model";
 import { serifClass } from "../helpers/serifHelper";
 import { returnColor } from "../helpers/colorHelper";
 

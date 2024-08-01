@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { LinksModel, MemberModel, PageModel, SectionModel } from '../models/page'
+import { LinksModel, MemberModel, PageModel, SectionModel } from '../models/page.model'
 import { ColorGroup, HeaderModel } from '../models/layout.model'
 import { returnColor } from '../helpers/colorHelper'
 const urlApi = 'https://igrejaunasp.com/api/wp-json/wp/v2/'

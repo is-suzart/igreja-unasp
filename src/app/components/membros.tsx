@@ -1,5 +1,5 @@
 import { SocialModel } from "../models/layout.model";
-import { MemberModel } from "../models/page";
+import { MemberModel } from "../models/page.model";
 import { getMembers } from "../services/home";
 import { SocialItem } from "./header";
 import classnames  from  'classnames'

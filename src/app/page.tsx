@@ -4,7 +4,7 @@ import {Banner} from "./components/banner";
 import { Encontros } from "./partials/encontros";
 import { getPage } from "./services/home";
 import { Section } from "./components/section";
-import { SectionModel } from "./models/page";
+import { SectionModel } from "./models/page.model";
 import { Anuncio } from "./components/ad";
 
 

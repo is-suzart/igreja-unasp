@@ -1,5 +1,5 @@
 import { ButtonModel } from "../models/layout.model";
-import { SectionModel } from "../models/page";
+import { SectionModel } from "../models/page.model";
 import Button from "./button";
 
 export function Anuncio({anuncio,keyIndex}:{anuncio:SectionModel,keyIndex:number}){

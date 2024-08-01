@@ -1,5 +1,5 @@
 import { ButtonModel } from "../models/layout.model";
-import { SectionModel } from "../models/page";
+import { SectionModel } from "../models/page.model";
 import classnames  from  'classnames'
 import Button from "./button";
 import Members from "./membros";

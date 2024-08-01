@@ -1,7 +1,7 @@
 import { Anuncio } from "../components/ad";
 import { Banner } from "../components/banner";
 import { Section } from "../components/section";
-import { SectionModel } from "../models/page";
+import { SectionModel } from "../models/page.model";
 import { getPage } from "../services/home";
 
 export default async function Sobre(){
