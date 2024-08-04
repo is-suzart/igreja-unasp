@@ -3,6 +3,8 @@ import { SectionModel } from "../models/page.model";
 import classnames  from  'classnames'
 import Button from "./button";
 import Members from "./membros";
+import { cleanIt } from "../helpers/serifHelper";
+
 
 export function Section ({section,keyIndex}:{section:SectionModel,keyIndex:number}){
 
@@ -66,7 +68,7 @@ export function Section ({section,keyIndex}:{section:SectionModel,keyIndex:numbe
                 <div className={classNames('section')}>
                     <div className={classNames('between')}>
                         <h6 className={classNames('h6')}>{section.subTitle}</h6>
-                        <h1 className={classNames('h1')} dangerouslySetInnerHTML={{__html: section.title}}/>
+                        <h1 className={classNames('h1')} dangerouslySetInnerHTML={{__html: cleanIt(section.title)}}/>
                         <p className={classNames('p')}>{section.text}</p>
                         <div className="mt-4">
                             

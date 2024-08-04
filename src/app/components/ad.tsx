@@ -1,5 +1,6 @@
 import { ButtonModel } from "../models/layout.model";
 import { SectionModel } from "../models/page.model";
+import { cleanIt } from "../helpers/serifHelper";
 import Button from "./button";
 
 export function Anuncio({anuncio,keyIndex}:{anuncio:SectionModel,keyIndex:number}){
@@ -9,11 +10,11 @@ export function Anuncio({anuncio,keyIndex}:{anuncio:SectionModel,keyIndex:number
         backgroundPosition: 'center',
     };
     return (
-        <div style={bannerStyle} className="w-full px-8 lg:px-10 grid grid-cols-12 xl:py-16 2xl:py-24" key={keyIndex} >
+        <div style={bannerStyle} className="w-full px-8 lg:px-10 grid grid-cols-12 items-center xl:py-16 2xl:py-24 h-[80vh] md:h-[65vh] xl:h-[50vh]" key={keyIndex} >
             <div className="col-span-12 lg:col-span-6">
                 <div className="text-white">
                     <h5 className="text-sm font-bold">{anuncio.subTitle}</h5>
-                    <h1 className="text-4xl font-black" dangerouslySetInnerHTML={{__html:anuncio.title}}></h1>
+                    <h1 className="text-4xl font-black" dangerouslySetInnerHTML={{__html:cleanIt(anuncio.title)}}></h1>
                     <p className="mt-1 font-sans">{anuncio.text}</p>
                 </div>
                 <div className="mt-4 lg:w-2/3">
