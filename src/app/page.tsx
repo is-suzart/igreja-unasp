@@ -15,7 +15,7 @@ export default async function Home() {
       <Banner bannerData={homePage.banner} />
       <Encontros encontros={homePage.encontros} />
       {homePage.sections.map((section: SectionModel, index: number) => (
-        section.type === 'Seção' ?
+        section.type === 'Seção' || section.type === 'Membros' ?
         <Section key={index} section={section} keyIndex={index} />
         :
         <Anuncio key={index} anuncio={section} keyIndex={index} />
