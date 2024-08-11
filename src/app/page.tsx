@@ -8,9 +8,8 @@ import { SectionModel } from "./models/page.model";
 import { Anuncio } from "./components/ad";
 
 
-
 export default async function Home() {
-  const homePage = await getPage('index');
+  const homePage = await getPage('igreja-unasp');
   return (
     <main className="">
       <Banner bannerData={homePage.banner} />
