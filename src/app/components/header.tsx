@@ -134,8 +134,8 @@ export function MenuItem({ link, name,dark }: MenuModel) {
 export function SocialItem ({social,dark}: {social: SocialModel,dark:boolean}){
        const socialClass =  classnames({
             'rounded-full flex justify-center items-center mx-2 border p-2': true,
-            'hover:bg-slate-300 hover:border-slate-300 text-slate-50 hover:text-slate-900 border-slate-50': !dark,
-            'hover:bg-slate-300 hover:border-slate-300 text-slate-900 hover:text-slate-950 border-slate-300': dark,
+            'hover:bg-slate-300 hover:border-slate-300 text-slate-900 hover:text-slate-900 border-slate-900': dark,
+            'hover:bg-slate-300 hover:border-slate-300 text-slate-50 hover:text-slate-950 border-slate-300': !dark,
         })
 
 
