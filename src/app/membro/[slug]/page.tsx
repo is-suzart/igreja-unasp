@@ -33,7 +33,7 @@ export default async function BlogPage({ params }: MembroParam) {
                 <div className="mt-6 flex justify-center">
                     <img src={membro.photo} className="rounded-2xl w-full px-8 lg:px-0 lg:w-[30vw] lg:mx-auto" alt={membro.name} />
                 </div>
-                <div className="my-4 w-full px-8 lg:w-[40vw] lg:mx-auto">
+                <div className="my-4 w-full px-8 lg:w-[40vw] lg:mx-auto html-container">
                     <p dangerouslySetInnerHTML={{ __html: cleanIt(membro.html!) }}></p>
                 </div>
 

@@ -1,6 +1,5 @@
 import { getBlogPageWithSlug } from '@/app/services/blog'
 import Button from '@/app/components/button'
-import './blog.css'
 import { ColorGroup, LinkModel } from '@/app/models/layout.model'
 import { cleanIt } from '@/app/helpers/serifHelper'
 type BlogPageProps = {
@@ -24,7 +23,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
                 <div style={bannerStyle} className='flex items-center justify-center h-screen lg:h-[50vh] pt-10'>
                 <h1 className='px-4 lg:px-0 font-black text-4xl text-center text-white'>{blog.title}</h1>
                 </div>
-                <div className='lg:mt-12 mt-8 px-8 lg:px-32 2xl:px-64 blog-container'>
+                <div className='lg:mt-12 mt-8 px-8 lg:px-32 2xl:px-64 html-container'>
                     <div dangerouslySetInnerHTML={{ __html: cleanIt(blog.html) }}></div>
                 </div>
             </div>
