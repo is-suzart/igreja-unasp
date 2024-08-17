@@ -1,5 +1,6 @@
 import axios from "axios"
 import { BlogModel } from "../models/blog"
+import { MemberModel } from "../models/page.model"
 
 const urlApi = 'https://igrejaunasp.com/api/wp-json/wp/v2/'
 export async function getBlogPage(){
@@ -48,3 +49,28 @@ export async function getBlogPage(){
      }
 
  }
+ export async function getMembroBySlug(slug:string){
+    const res:any = await axios({
+        method: 'get',
+        url: `${urlApi}membro`,
+        params: {slug:slug}
+    })
+    const item = res.data[0]
+    if(res.data.length > 0){
+        const result: MemberModel ={
+            id: item.id,
+            slug: item.slug,
+            name: item.title.rendered,
+            photo: item.yoast_head_json.og_image ? item.yoast_head_json.og_image[0].url : undefined,
+            text: item.content.rendered,
+            cargo: item.acf.cargo,
+            social: item.acf.social,
+            html: item.content.rendered
+        }
+
+    return result
+    } else {
+       return null
+    }
+
+}

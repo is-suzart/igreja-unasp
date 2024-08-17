@@ -41,7 +41,7 @@ export async function Banner({bannerData}: {bannerData: BannerModel[]}) {
                         text={item.text}
                         color_grupo={item.color_grupo}
                         link={item.link}
-                        outline={item.hasIcon}
+                        outline={item.outline}
                         hasIcon={item.hasIcon}
                         icon={item.icon ? item.icon : undefined}
                         isFullSize={true}

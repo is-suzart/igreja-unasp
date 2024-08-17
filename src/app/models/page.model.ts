@@ -45,9 +45,11 @@ export interface LinksModel{
 }
 export interface MemberModel{
     id: string;
+    slug: string;
     name: string;
     text: string;
     photo: string | undefined;
     cargo: any;
     social: SocialModel[] | null;
+    html?: string;
 }

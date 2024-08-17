@@ -5,7 +5,7 @@ import { MenuItem,SocialItem } from "./header";
 
 export function MenuModal({menu,social}:{menu:MenuModel[],social:SocialModel[]}){
     return (
-        <div className="menu-modal w-screen h-screen fixed z-10 top-0 left-0 bg-slate-900 py-12">
+        <div className="menu-modal w-screen h-full fixed z-10 top-0 left-0 bg-slate-900 py-12">
 
             <ul className="py-14">
             {
@@ -23,7 +23,7 @@ export function MenuModal({menu,social}:{menu:MenuModel[],social:SocialModel[]})
                 {
                     social.map((x:SocialModel,i:number) => {
                         return (
-                            <SocialItem social={x} key={x.name} />
+                            <SocialItem social={x} key={x.name} dark={true} />
                         )
                     })
                 }

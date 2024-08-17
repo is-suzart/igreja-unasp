@@ -34,7 +34,10 @@
 .custom-btn {
   @apply rounded-full px-5 py-2 font-bold border-2;
 }
-.has-scroll {
+.has-scroll-dark {
+  @apply bg-slate-50 fixed py-2 !important;
+}
+.has-scroll-light {
   @apply bg-slate-900 fixed py-2 !important;
 }
 .menu-modal{

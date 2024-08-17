@@ -8,6 +8,7 @@ export interface HeaderModel {
 export interface MenuModel {
     name: string;
     link: string;
+    dark?: boolean
 }
 export interface SocialModel{
     icon: FaIconModel;

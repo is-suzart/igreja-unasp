@@ -106,6 +106,7 @@ export async function getMembers(categories:number[]){
     result = data.map((x:any) => {
         return <MemberModel>{
             id: x.id,
+            slug: x.slug,
             name: x.title.rendered,
             photo: x.yoast_head_json.og_image ? x.yoast_head_json.og_image[0].url : undefined,
             text: x.content.rendered,
