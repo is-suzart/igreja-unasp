@@ -39,6 +39,12 @@ export function Header({data}: {data: HeaderModel}) {
         if(isClient){
             window.removeEventListener('scroll', handleDarkScroll);
             window.removeEventListener('scroll', handleLightScroll);
+            const header = document.getElementById('main-header');
+            if(header?.classList.contains('has-scroll-dark')){
+                header?.classList.remove('has-scroll-dark')
+            } else if(header?.classList.contains('has-scroll-light')){
+                header?.classList.remove('has-scroll-light')
+            }
             // Atualiza o estado com base na rota
             const isDarkMode = path.includes('/membro');
             setDark(isDarkMode);
