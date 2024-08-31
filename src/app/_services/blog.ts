@@ -1,6 +1,6 @@
 import axios from "axios"
-import { BlogModel } from "../models/blog"
-import { MemberModel } from "../models/page.model"
+import { BlogModel } from "../_models/blog"
+import { MemberModel } from "../_models/page.model"
 
 const urlApi = 'https://igrejaunasp.com/api/wp-json/wp/v2/'
 export async function getBlogPage(){

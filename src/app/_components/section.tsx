@@ -1,9 +1,9 @@
-import { ButtonModel } from "../models/layout.model";
-import { SectionModel } from "../models/page.model";
+import { ButtonModel } from "../_models/layout.model";
+import { SectionModel } from "../_models/page.model";
 import classnames  from  'classnames'
 import Button from "./button";
 import Members from "./membros";
-import { cleanIt } from "../helpers/serifHelper";
+import { cleanIt } from "../_helpers/serifHelper";
 
 
 export function Section ({section,keyIndex}:{section:SectionModel,keyIndex:number}){

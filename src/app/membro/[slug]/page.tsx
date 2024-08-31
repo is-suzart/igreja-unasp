@@ -1,9 +1,9 @@
-import { BlogModel } from "@/app/models/blog";
-import { getMembroBySlug } from "@/app/services/blog";
-import { cleanIt } from "@/app/helpers/serifHelper";
-import { MemberModel } from "@/app/models/page.model";
-import { SocialItem } from "@/app/components/header";
-import { SocialModel } from "@/app/models/layout.model";
+import { BlogModel } from "@/app/_models/blog";
+import { getMembroBySlug } from "@/app/_services/blog";
+import { cleanIt } from "@/app/_helpers/serifHelper";
+import { MemberModel } from "@/app/_models/page.model";
+import { SocialItem } from "@/app/_components/header";
+import { SocialModel } from "@/app/_models/layout.model";
 
 
 type MembroParam = {

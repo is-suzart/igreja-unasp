@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { MenuModel, SocialModel } from "../models/layout.model";
-import { FaIcon } from "../helpers/fontAwesomeHelper";
+import { MenuModel, SocialModel } from "../_models/layout.model";
+import { FaIcon } from "../_helpers/fontAwesomeHelper";
 import { MenuItem,SocialItem } from "./header";
 
 export function MenuModal({menu,social}:{menu:MenuModel[],social:SocialModel[]}){

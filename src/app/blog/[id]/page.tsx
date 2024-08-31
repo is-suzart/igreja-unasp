@@ -1,7 +1,7 @@
-import { getBlogPageWithSlug } from '@/app/services/blog'
-import Button from '@/app/components/button'
-import { ColorGroup, LinkModel } from '@/app/models/layout.model'
-import { cleanIt } from '@/app/helpers/serifHelper'
+import { getBlogPageWithSlug } from '@/app/_services/blog'
+import Button from '@/app/_components/button'
+import { ColorGroup, LinkModel } from '@/app/_models/layout.model'
+import { cleanIt } from '@/app/_helpers/serifHelper'
 type BlogPageProps = {
     params: {
         id: string

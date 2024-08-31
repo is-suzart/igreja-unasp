@@ -1,11 +1,11 @@
 import Image from "next/image";
-import Button from "./components/button";
-import {Banner} from "./components/banner";
+import Button from "./_components/button";
+import {Banner} from "./_components/banner";
 import { Encontros } from "./partials/encontros";
-import { getPage } from "./services/home";
-import { Section } from "./components/section";
-import { SectionModel } from "./models/page.model";
-import { Anuncio } from "./components/ad";
+import { getPage } from "./_services/home";
+import { Section } from "./_components/section";
+import { SectionModel } from "./_models/page.model";
+import { Anuncio } from "./_components/ad";
 
 
 export default async function Home() {

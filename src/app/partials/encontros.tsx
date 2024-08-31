@@ -1,7 +1,7 @@
-import { EncounterModel } from "../models/page.model";
-import { serifClass } from "../helpers/serifHelper";
-import { returnColor } from "../helpers/colorHelper";
-import { cleanIt } from "../helpers/serifHelper";
+import { EncounterModel } from "../_models/page.model";
+import { serifClass } from "../_helpers/serifHelper";
+import { returnColor } from "../_helpers/colorHelper";
+import { cleanIt } from "../_helpers/serifHelper";
 
 export function Encontros({encontros}:{encontros:EncounterModel[]}){
     return (

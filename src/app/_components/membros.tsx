@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { SocialModel } from "../models/layout.model";
-import { MemberModel } from "../models/page.model";
-import { getMembers } from "../services/home";
+import { SocialModel } from "../_models/layout.model";
+import { MemberModel } from "../_models/page.model";
+import { getMembers } from "../_services/home";
 import { SocialItem } from "./header";
 import classnames  from  'classnames'
 

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import {Header} from "./components/header";
+import {Header} from "./_components/header";
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { getUnaspHeader } from "./services/home";
+import { getUnaspHeader } from "./_services/home";
 
 const poppins = Poppins({weight: ['100','200','300','400','500','600','700','800','900'],subsets: ['latin-ext']} );
 

@@ -1,8 +1,8 @@
 // Links.tsx
 import Link from "next/link";
-import Button from "../components/button";
-import { ButtonModel } from "../models/layout.model";
-import { getLinks } from "../services/home";
+import Button from "../_components/button";
+import { ButtonModel } from "../_models/layout.model";
+import { getLinks } from "../_services/home";
 
 export default async function Links() {
   const links = await getLinks("links");

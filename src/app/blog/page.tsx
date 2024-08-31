@@ -1,5 +1,5 @@
-import { BlogModel } from "../models/blog"
-import { getBlogPage } from "../services/blog"
+import { BlogModel } from "../_models/blog"
+import { getBlogPage } from "../_services/blog"
 import Link from "next/link";
 
 export default async function Blog(){

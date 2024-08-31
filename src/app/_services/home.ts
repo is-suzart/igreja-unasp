@@ -1,7 +1,7 @@
 import axios from 'axios'
-import { LinksModel, MemberModel, PageModel, SectionModel } from '../models/page.model'
-import { ColorGroup, HeaderModel } from '../models/layout.model'
-import { returnColor } from '../helpers/colorHelper'
+import { LinksModel, MemberModel, PageModel, PubliModel, SectionModel } from '../_models/page.model'
+import { ColorGroup, HeaderModel } from '../_models/layout.model'
+import { returnColor } from '../_helpers/colorHelper'
 const urlApi = 'https://igrejaunasp.com/api/wp-json/wp/v2/'
 
 // interface seoModel {
@@ -116,4 +116,43 @@ export async function getMembers(categories:number[]){
     })
 
     return result
+}
+export async function getPubli(slug:string){
+    const res:any = await axios({
+        method: 'get',
+        url: `${urlApi}publi`,
+        params: {
+            slug: slug
+        }
+    })
+    const data = res.data
+    var sectionsOn: SectionModel[] = [];
+    var serverSection = data[0].acf.secao
+    if(serverSection != false){
+        sectionsOn = serverSection.map((x:any) => {
+            function addClassesToStrong(htmlString: string, color: ColorGroup): string {
+                const colorClass = `text-${returnColor(color)}`;
+                const replacement = `<strong class="font-bold ${colorClass}">`;
+                return htmlString.replace(/<strong>/g, replacement);
+            }
+            var titulo = addClassesToStrong(x.titulo_com_cores.titulo, x.titulo_com_cores.color_grupo);
+            return<SectionModel> {
+                image: x.img,
+                title: titulo,
+                subTitle: x.subtitle,
+                align: x.align,
+                text: x.text,
+                buttons: x.btns,
+                categoriasMembros: x.isSection == "Membros" ? x.categorias_membros : null,
+                type: x.isSection
+            }
+        })
+    }
+
+        return <PubliModel>{
+            id: data[0].id,
+            title: data[0].title.rendered,
+            section: sectionsOn,
+            seo: data[0].yoast_head_json
+        }
 }

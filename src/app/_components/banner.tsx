@@ -1,10 +1,10 @@
-import { getPage } from "../services/home";
-import { BannerModel, PageModel } from "../models/page.model";
+import { getPage } from "../_services/home";
+import { BannerModel, PageModel } from "../_models/page.model";
 import Button from "./button";
-import { ButtonModel } from "../models/layout.model";
-import { serifClass } from "../helpers/serifHelper";
+import { ButtonModel } from "../_models/layout.model";
+import { serifClass } from "../_helpers/serifHelper";
 import { json } from "stream/consumers";
-import { returnColor } from "../helpers/colorHelper";
+import { returnColor } from "../_helpers/colorHelper";
 
 
 export async function Banner({bannerData}: {bannerData: BannerModel[]}) {

@@ -1,7 +1,7 @@
 "use client"
-import { HeaderModel, MenuModel, SocialModel } from "../models/layout.model";
+import { HeaderModel, MenuModel, SocialModel } from "../_models/layout.model";
 import Link from "next/link";
-import { FaIcon } from "../helpers/fontAwesomeHelper";
+import { FaIcon } from "../_helpers/fontAwesomeHelper";
 import { MouseEventHandler, useEffect, useRef, useState } from "react";
 import { MenuModal } from "./menuModal";
 import classnames  from  'classnames'

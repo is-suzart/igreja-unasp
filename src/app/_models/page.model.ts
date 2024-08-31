@@ -53,3 +53,9 @@ export interface MemberModel{
     social: SocialModel[] | null;
     html?: string;
 }
+export interface PubliModel {
+    id: number;
+    title: string;
+    section: SectionModel[];
+    seo?: any;
+}

@@ -1,9 +1,9 @@
 import classnames  from  'classnames'
-import { FaIcon } from '../helpers/fontAwesomeHelper';
-import { ButtonModel } from '../models/layout.model';
-import { handleTarget, handleUrl } from '../helpers/handleLink';
+import { FaIcon } from '../_helpers/fontAwesomeHelper';
+import { ButtonModel } from '../_models/layout.model';
+import { handleTarget, handleUrl } from '../_helpers/handleLink';
 import Link from 'next/link';
-import { handleBtnColors } from '../helpers/colorHelper';
+import { handleBtnColors } from '../_helpers/colorHelper';
 interface ButtonProps {
   text: string;
   link: string;

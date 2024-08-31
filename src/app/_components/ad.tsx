@@ -1,6 +1,6 @@
-import { ButtonModel } from "../models/layout.model";
-import { SectionModel } from "../models/page.model";
-import { cleanIt } from "../helpers/serifHelper";
+import { ButtonModel } from "../_models/layout.model";
+import { SectionModel } from "../_models/page.model";
+import { cleanIt } from "../_helpers/serifHelper";
 import Button from "./button";
 
 export function Anuncio({anuncio,keyIndex}:{anuncio:SectionModel,keyIndex:number}){

@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { ColorGroup } from "../models/layout.model";
+import { ColorGroup } from "../_models/layout.model";
 
 export function returnColor(colorGroup:ColorGroup){
     return colorGroup.colors.toLowerCase()+ '-' + colorGroup.shade.toLowerCase()

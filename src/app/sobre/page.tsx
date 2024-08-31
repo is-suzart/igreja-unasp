@@ -1,8 +1,8 @@
-import { Anuncio } from "../components/ad";
-import { Banner } from "../components/banner";
-import { Section } from "../components/section";
-import { SectionModel } from "../models/page.model";
-import { getPage } from "../services/home";
+import { Anuncio } from "../_components/ad";
+import { Banner } from "../_components/banner";
+import { Section } from "../_components/section";
+import { SectionModel } from "../_models/page.model";
+import { getPage } from "../_services/home";
 
 export default async function Sobre(){
     const sobrePage = await getPage('sobre');
