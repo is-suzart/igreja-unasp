@@ -46,7 +46,7 @@ export function Header({data}: {data: HeaderModel}) {
                 header?.classList.remove('has-scroll-light')
             }
             // Atualiza o estado com base na rota
-            const isDarkMode = path.includes('/membro');
+            const isDarkMode = path.includes('/membro') || path.includes('/publi/');
             setDark(isDarkMode);
             darkRef.current = isDarkMode;
             if(isDarkMode){
