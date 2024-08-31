@@ -35,7 +35,7 @@ export default async function Members({categories}:{categories:number[]}){
                                     {m.social.map((s:SocialModel,i:number) => {
                                         return(
                                             <div className="flex mt-4" key={i}>
-                                                <SocialItem social={s} dark={true} />
+                                                <SocialItem social={s} dark={false} />
                                             </div>
                                             
                                         )
