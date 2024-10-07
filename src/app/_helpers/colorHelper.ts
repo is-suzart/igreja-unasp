@@ -14,9 +14,6 @@ export function handleBtnColors(colorGroup:ColorGroup,outline:boolean){
     }
     return classNames({
         'custom-btn': true,
-        'transition-all': true,
-        'duration-200': true,
-        'ease-in-out': true,
         'text-slate-900': Number(colorGroup.shade) < 400 ? true && !outline : false,
         'text-slate-50': Number(colorGroup.shade) >= 400 ? true && !outline : false ,
         ['bg-'+returnColor(colorGroup)] :  !outline,
